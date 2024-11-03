@@ -6,5 +6,3 @@ The website design is just a modification of [Jon Barron's website](https://jonb
 
 
 
-## issues
-* In general, jekyll will try to build a full page for every post. I skip that by forcing `permalink: /`. This creates multiple entries in sitemap.xml for index.html but is otherwise fine. 
