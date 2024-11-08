@@ -4,10 +4,9 @@ title:  "A 3D Tennis Complete Analysis"
 date:   2023-10-05 21:21:53 +00:00
 image: /images/tenniselephant.png
 categories: Sharif
-course: "16-741 Mechanics of Manipulation"
+course: "3D Computer Vision"
 author: "Parham Rezaei, Omid Daliran, Amirreza Azari, Reza Heidari, Payam Taebi"
 paper: /pdfs/tennis3d.pdf
-code: https://github.com/leonidk/cupdice
+code: https://github.com/Rezaei-Parham/Tennis-3DVision-Project
 ---
 Used both classical computer vision techniques and deep learning models to automate the process of analyzing tennis matches.
-```
