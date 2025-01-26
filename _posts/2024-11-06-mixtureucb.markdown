@@ -6,7 +6,7 @@ image: /images/mixtureelephant.png
 categories: research
 author: "Parham Rezaei"
 authors: "<strong>Parham Rezaei</strong>, Farzan Farnia, Cheuk Ting Li"
-venue: "arXiv"
+venue: "ICLR 2025 :heart:"
 arxiv: https://arxiv.org/abs/2412.17622
 code: https://github.com/rezaei-parham/mixture-ucb
 ---
