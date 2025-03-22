@@ -131,10 +131,10 @@
 <section class="hero teaser">
   <div class="hero-body">
     <div class="container" style="text-align: center;">
-          <img src="static/file-figs/red_bird_algorithms-figure.jpg" class="inline-figure-six" alt="Mixutre-UCB Comparison." width="500" height="500"/>
-       <p>Comparison of our proposed algorithms Mixture-UCB-CAB and Mixture-UCB-OGD
-        with the baseline one arm online algorithms. We plot the diversity-measuring RKE score of the
-        generated data and display 9 (randomly-selected) samples produced in the process of each algorithm.</p>
+          <img src="static/file-figs/red_bird_figure.jpg" class="inline-figure-six" alt="Mixutre Comparison."/>
+       <p>Visual comparison of the diversity across individual arms and the optimal mixture for
+        images generated using models Kandinsky 3, Stable Diffusion 3, and PixArt-α with the prompt
+        “Red bird, cartoon style”. The mixture weights are computed via the Mixture-UCB-OGD method.</p>
       </div>
     </div>
 </section>
@@ -201,7 +201,7 @@ evaluation score compared to each individual model? In this work, we numerically
           </div>
           <br />
           <div class="content has-text-centered">
-            <img src="./static/file-figs/ffhq-figure1-percentVersion.jpg" class="inline-figure-six" alt="Neural Jacobian Field Data." />
+            <img src="./static/file-figs/figure1-ffhq-percent-bigFID.jpg" class="inline-figure-six" alt="fid and kid example." />
           </div>
           <div class="content has-text-justified">
             <p>
@@ -215,8 +215,11 @@ goal is to find the best mixture of the models with the optimal evaluation score
             </p>
           </div>
           <div class="content has-text-centered">
-            <img src="./static/file-figs/red_bird_figure.jpg" class="inline-figure-six" alt="Neural Jacobian Field Training." />
-          </div>
+            <img src="./static/file-figs/red_bird_algorithms-figure.jpg" class="inline-figure-six" alt="mixture algorithms" />
+            <!-- <p>Comparison of our proposed algorithms Mixture-UCB-CAB and Mixture-UCB-OGD
+              with the baseline one arm online algorithms. We plot the diversity-measuring RKE score of the
+              generated data and display 9 (randomly-selected) samples produced in the process of each algorithm.</p>
+          </div> -->
           <div class="content has-text-justified">
             <p>
               
@@ -270,8 +273,55 @@ goal is to find the best mixture of the models with the optimal evaluation score
 <!-- End youtube video -->
 
 
-
-
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/file-figs/Dog-Style-RKEreduce.jpg" alt="dogs and cars"/>
+        <h2 class="subtitle has-text-centered">
+          Visual comparison of the diversity across individual arms and the optimal mixture for
+Dog Breed Generators and Style-Specific Generators.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/file-figs/sofa-visual-rke.drawio.jpg" alt="sofas"/>
+        <h2 class="subtitle has-text-centered">
+          Visual comparison of diversity of each arm and the mixture for sofa image generators.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/file-figs/afhq-truncated-visual.drawio.jpg" alt="afhq"/>
+        <h2 class="subtitle has-text-centered">
+          Visual demonstration of the increase in diversity when mixing arms compared to individual
+arms for truncated AFHQ Cat generative models. The RKE values for each model and the mixture
+represent the diversity.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/file-figs/arxiv-ffhq-truncated-rke.jpg" alt="ffhq"/>
+        <h2 class="subtitle has-text-centered">
+          Visual demonstration of the increase in diversity when mixing arms compared to individual
+arms for truncated FFHQ generative models. The RKE values for each model and the mixture serve
+as indicators of diversity.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/file-figs/quality-visual.arxiv.jpg" alt="adding quality"/>
+        <h2 class="subtitle has-text-centered">
+          Visual demonstration of the effect of combining Precision/Density with RKE. The CI-
+FAR10 generator is excluded when these quality metrics are applied.
+        </h2>
+      </div>
+  </div>
+  </div>
+</div>
+</section>
 
 
 
