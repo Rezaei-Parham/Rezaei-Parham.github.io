@@ -9,6 +9,6 @@ authors: "<strong>Parham Rezaei</strong>, Farzan Farnia, Cheuk Ting Li"
 venue: "ICLR"
 arxiv: https://arxiv.org/abs/2412.17622
 code: https://github.com/rezaei-parham/mixture-ucb
-website: https://rezaei-parham.github.io/projectpages/Mixture-UCB/
+website: https://rezaei-parham.github.io/Mixture-UCB/
 ---
 We proposed an online algorithm for finding the optimal mixture of generative models.
