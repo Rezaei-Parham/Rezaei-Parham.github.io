@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Why Settle for Mid: A Probabilistic Viewpoint to Spatial Relationship Alignment in Text-to-image Models"
+date:   2025-07-01 22:21:59 +00:00
+image: /images/pandaoverdragon.png
+categories: research
+author: "Parham Rezaei"
+authors: "<strong>Parham Rezaei</strong>, Arash Mari Oriyad, M.S. Baghshah, M.H. Rohban"
+venue: "Under Review"
+arxiv: https://arxiv.org/abs/2506.23418
+code: https://github.com/Rezaei-Parham/Why_Settle_for_Mid
+---
+We proposed a new way to look at the spatial relationship alignment in T2I models and how to use it to improve the adherence of generated images to textual descriptions.
