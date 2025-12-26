@@ -353,3 +353,16 @@ a{
 @media (prefers-reduced-motion: reduce){
   .gradient-text{ animation: none; }
 }
+
+.results-stack{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.results-stack img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-top: 12px;
+}
