@@ -1,397 +1,472 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
-<body style="background-color:#E2F1E7;">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BW2NXSSWD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-2BW2NXSSWD');
+    gtag("js", new Date());
+    gtag("config", "G-2BW2NXSSWD");
   </script>
-  <title>{{ site.name }}</title>
 
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <!-- <link rel="icon" href="../images/profile.png"> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="{{ site.name }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <title>{{ site.name }}</title>
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
 </head>
 
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle;color: #243642;">
-              <h1>
-                Parham Rezaei
-              </h1>
-              <p>I'm a final year undergraduate student in Computer Engineering at Sharif University of Technology.</p>
-              <p>Broadly speaking, I’m interested in generative models from both theoretical and practical perspectives. Most of my research has also been in this area. Currently, I’m focusing on inference-time scaling for autoregressive image generative models. By the way, I’m always open to opportunities to pursue theoretical research on flow models as well.</p>
-              
-              <p style="text-align:center">
-                <a href="mailto:parhamix@gmail.com"> Email</a> &nbsp;/&nbsp;
-                <a href="https://github.com/rezaei-parham">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.ca/citations?hl=en&pli=1&user=1xWK-VAAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/parham-rezaei"> LinkedIn </a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/profile.png">
-            </td>
-          </tr>
-        </table>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Parham Rezaei</span>
+      </a>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle;color: #243642;">
-              <h2>Publications</h2>
-                <p>The following is what I have contributed to this field. I've found the projects fun, I hope you find them interesting too!</p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <nav class="navlinks" aria-label="primary">
+        <a href="#publications">Publications</a>
+        <a href="#internships">Internships</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#awards">Awards</a>
+        <a href="#projects">Other Projects</a>
+        <a href="#misc">Misc</a>
+      </nav>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle;color: #243642;">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
+      <div class="topbar-actions">
+        <button id="themeToggle" class="btn btn-ghost" type="button" aria-label="Toggle dark mode">
+          <span class="btn-ico" aria-hidden="true">◐</span>
+          <span class="btn-text">Theme</span>
+        </button>
+      </div>
 
-              <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Intel Projects</h2>
-              <p>Besides my work on the RealSense depth sensors and the publications above, a sampling of my publicly disclosed work
-              </p>
-            </td>
-          </tr> -->
-        <!-- </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
+    <div class="container mobile-nav" id="mobileNav" hidden>
+      <a href="#publications">Publications</a>
+      <a href="#internships">Internships</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
+      <a href="#projects">Other Projects</a>
+      <a href="#misc">Misc</a>
+    </div>
+  </header>
 
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> / -->
-              <!-- {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br> -->
-        <table width="100%" align="middle" border="0" cellspacing="0" cellpadding="10">
-          <tbody>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research Experiences</h2>
-              <p> I have been fortunate to work with some amazing researchers and professors.
-            </td>
+  <main id="top" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="card hero-card">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="pill">Computer Engineering, Sharif University of Technology</p>
+            <h1 class="hero-title">Parham Rezaei</h1>
+            <p class="hero-sub">
+              I’m a final year undergraduate student in Computer Engineering at Sharif University of Technology.
+              I work on generative models, from theory to practice. Currently, I’m focusing on inference time scaling for
+              autoregressive image generative models.
+            </p>
 
-          <tr>
-            <td style="padding:0%" width="100%" valign="middle">
-              <table cellspacing="20">
-                <tbody>
-                <tr>
-                  <td width="90%">
-                    <b>EPFL</b><br>
-                    RL on auto-regressive image generative models • Jun. 2025 to Now<br>
-                    Advisor: Prof. <a href="https://scholar.google.com/citations?user=RKjEFukAAAAJ&hl=en">Amir Zamir</a> (VILAB)
-                  </td>
-                  <td width="10%">
-                    <img src="../images/experiences/epfl.png" width="100" style="display: block; margin-left: auto; margin-right: auto;">
-                  </td>
-            </tr>
+            <div class="chips">
+              <span class="chip">Generative modeling</span>
+              <span class="chip">Random matrix theory</span>
+              <span class="chip">Computer vision</span>
+              <span class="chip">Representation learning</span>
+            </div>
 
-          <tr>
-                <td width="90%">
-                  <b>ISTA</b><br>
-                  Theoretical foundations of generative data augmentation • Feb. 2025 to Jun. 2025 <br>
-                  Advisor: Prof. <a href="https://scholar.google.it/citations?user=BHdSb5AAAAAJ&hl=it">Marco Mondelli</a> and Prof. <a href="https://scholar.google.it/citations?hl=it&user=wQanfTIAAAAJ">Francesco Locatello</a>
-                </td>
-                <td width="10%">
-                  <img src="../images/experiences/ista.svg.png" width="100" style="display: block; margin-left: auto; margin-right: auto;">
-                </td>
-          </tr>
-            <tr>
-                <td width="90%">
-                    <b>CUHK</b><br>
-                    Optimizing mixture of generative models using mixture-ucb algorithms • Jul. 2024 to Oct. 2024<br>
-                    Advisor: Prof. <a href="https://scholar.google.com/citations?user=GYPCqcYAAAAJ&hl=en">Farzan Farnia</a>
-                  </td>
-                  <td width="10%">
-                    <img src="../images/experiences/cuhk.png" width="100" style="display: flex; justify-content: center;">
-                  </td>
-                </tr>
-                <tr>
-                  <td width="80%">
-                    <b>Sharif ML Lab</b><br>
-                    Compositional generation and spatial accuracy in T2I models • Dec. 2023 to Jul. 2024<br>
-                    Advisor: Prof. <a href="https://scholar.google.com/citations?hl=en&user=S1U0KlgAAAAJ">Mahdieh Soleymani</a>, Prof. <a href="https://scholar.google.com/citations?hl=en&user=pRyJ6FkAAAAJ">Mohammad Hossein Rohban</a>
-                  </td>
-                  <td width="10%">
-                    <img src="../images/experiences/sharif.png" width="80" style="display: block; margin-left: auto; margin-right: auto;">
-                  </td>
-                </tr>
-                  <td width="90%">
-                    <b>L3S Research Center</b><br>
-                    Improving rationales behind CLIP • Jul. 2023 to Oct. 2023<br>
-                    Advisor: Prof. <a href="https://scholar.google.com/citations?user=LC62bdYAAAAJ&hl=en">Wolfgang Nejdl</a>
-                  </td>
-                  <td width="10%">
-                    <img src="../images/experiences/l3s.png" width="80" style="display: flex; justify-content: center;">
-                  </td>
-                </tr>
-              </tbody></table>
-            </td>
-          </tr>
-          </tbody></table>
+            <div class="hero-links" role="list">
+              <a class="btn" href="mailto:parhamix@gmail.com">Email</a>
+              <a class="btn btn-ghost" href="https://github.com/rezaei-parham" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn btn-ghost" href="https://scholar.google.ca/citations?hl=en&pli=1&user=1xWK-VAAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/parham-rezaei" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <td style="padding:2.5%;width:100%;vertical-align:middle">
-                <h2>Teaching</h2>
-                <p> These include both teaching and non-paid TAing experiences.
-                </p>
-                <h3>TA</h3>
-                  <div class="title">
-                    Deep Learning [Graduate]: Spring 2025, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=S1U0KlgAAAAJ&hl=en">Mahdieh Soleymani</a> 
-                  </div>
-                  <br>
-                  <div class="title">
-                    System 2 [Graduate]: Spring 2025, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=S1U0KlgAAAAJ&hl=en">Mahdieh Soleymani</a> 
-                  </div>
-                  <br>
-                    <div class="title">
-                      Advanced Programming: Spring 2024, Spring 2023, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=veo-8swAAAAJ&hl=en">Mohammad Amin Fazli</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Artificial Intelligence: Spring 2024, Fall 2023, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=pRyJ6FkAAAAJ&hl=en">Mohammad Hossein Rohban</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Computer Simulation: Fall 2024 (Head), Spring 2024, Fall 2023, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=SVrMscYAAAAJ&hl=en">Bardia Safaei</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Design of Algorithms: Spring 2024, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=xuNJ-d8AAAAJ&hl=en">Mohammad Ali Abam</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Database Design: Spring 2024, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=cBR8x-4AAAAJ&hl=en">Maryam Ramezani</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Discrete Structures: Spring 2024, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=c1VC8nYAAAAJ&hl=en">Hamid Zarrabi-Zadeh</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Fundamentals of Programming: Fall 2023, Fall 2022, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=veo-8swAAAAJ&hl=en">Mohammad Amin Fazli</a> 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Linear Algebra: Spring 2023, Fall 2023, Sharif, with instructor: <a href="https://scholar.google.com/citations?user=cBR8x-4AAAAJ&hl=en">Maryam Ramezani</a> 
-                    </div>
-                    <br>
-                    <h3>Mathematics Olympiad Instructor</h3>
-                    <div class="title">
-                      Allameh Tabatabei High School: Sep. 2022 to Jul. 2023, Teaching Algebra 
-                    </div>
-                    <br>
-                    <div class="title">
-                      Allameh Helli High School: Sep. 2021 to Jul. 2022, Teaching Combinatorics and Geometry
-                    </div>
-                  </td>
-                </tr> 
-                <tr>
-                
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <p class="k">GPA</p>
+                <p class="v">19.75 out of 20</p>
+                <p class="s">Rank 5th</p>
+              </div>
+              <div class="mini-stat">
+                <p class="k">Reviewer</p>
+                <p class="v">ICLR 2026</p>
+                <p class="s">Conference reviewer</p>
+              </div>
+              <div class="mini-stat">
+                <p class="k">Talk</p>
+                <p class="v">Synthetic data augmentation</p>
+                <p class="s">ISTA invited talk</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="hero-media">
+            <div class="avatar-card">
+              <!-- Replace with your image path -->
+              <img class="avatar" src="images/profile.png" alt="Profile photo" />
+            </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Other Projects</h2>
-              <p> These include coursework, side projects and unpublished research work. (To be updated)
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <div class="card subtle hero-side">
+              <h2 class="h2">Now</h2>
+              <ul class="clean">
+                <li>Inference time scaling for autoregressive image generation</li>
+                <li>Open to theory focused work on flow models</li>
+                <li>Research interests: generative modeling, computer vision, ML</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="section-head">
+        <h2 class="h2">Publications</h2>
+        <p class="muted">Selected research and papers.</p>
+      </div>
 
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
+      <div class="grid">
+        {% for post in site.posts %}
+        {% for cat in post.categories %}
+        {% if cat == 'research' %}
+        <article class="card pub-card">
+          <div class="pub-media">
+            <!-- Uses your existing thumbnail logic -->
+            <img src="/tn{{post.image}}" alt="Project image" />
+          </div>
+          <div class="pub-body">
+            <h3 class="h3">{{post.title}}</h3>
+            <p class="muted tight">{{post.authors}}</p>
+            <p class="muted tight"><em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}</p>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Miscellaneous</h2>
-              <p> 
-                I enjoy reading and playing tennis in my free time. I also love traveling and generally new adventures.
-              </p>
-            </td>
-          </tr>
-        </table>
+            <div class="pub-links">
+              {% if post.arxiv %}<a class="link" href="{{post.arxiv}}">arxiv</a>{% endif %}
+              {% if post.video %}<a class="link" href="{{post.video}}">video</a>{% endif %}
+              {% if post.code %}<a class="link" href="{{post.code}}">code</a>{% endif %}
+              {% if post.poster %}<a class="link" href="{{post.poster}}">poster</a>{% endif %}
+              {% if post.slides %}<a class="link" href="{{post.slides}}">slides</a>{% endif %}
+              {% if post.website %}<a class="link" href="{{post.website}}">website</a>{% endif %}
+              {% if post.youtube %}<a class="link" href="{{post.youtube}}">youtube</a>{% endif %}
+            </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+            <div class="pub-excerpt">{{ post.excerpt }}</div>
+          </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Internships (interactive logos) -->
+    <section id="internships" class="section">
+      <div class="section-head">
+        <h2 class="h2">Internships</h2>
+        <p class="muted">Click a logo to view the details.</p>
+      </div>
+
+      <div class="card internships">
+        <div class="logo-grid" role="tablist" aria-label="Internship selector">
+          <button class="logo-btn is-active" type="button" role="tab" aria-selected="true"
+                  data-target="exp-epfl">
+            <img src="images/experiences/epfl.png" alt="EPFL logo" />
+          </button>
+          <button class="logo-btn" type="button" role="tab" aria-selected="false"
+                  data-target="exp-ista">
+            <img src="images/experiences/ista.png" alt="ISTA logo" />
+          </button>
+          <button class="logo-btn" type="button" role="tab" aria-selected="false"
+                  data-target="exp-cuhk">
+            <img src="images/experiences/cuhk.png" alt="CUHK logo" />
+          </button>
+          <button class="logo-btn" type="button" role="tab" aria-selected="false"
+                  data-target="exp-sharif">
+            <img src="images/experiences/sharif.png" alt="Sharif ML Lab logo" />
+          </button>
+        </div>
+
+        <div class="exp-panel-wrap">
+          <div class="exp-panel is-active" id="exp-epfl" role="tabpanel">
+            <div class="exp-head">
+              <h3 class="h3">EPFL</h3>
+              <p class="muted">Jun 2025 to Sept 2025, Visual Intelligence Lab</p>
+            </div>
+            <ul class="clean">
+              <li>Inference time scaling on autoregressive image generative models</li>
+              <li>Test time search methods, including a diverse beam search variant</li>
+              <li>Global, rule based, and VLM based verifiers for token structures</li>
+            </ul>
+            <p class="muted tight">
+              Advisor: Prof. <a class="link" href="https://scholar.google.com/citations?user=RKjEFukAAAAJ&hl=en" target="_blank" rel="noreferrer">Amir Zamir</a>
+            </p>
+          </div>
+
+          <div class="exp-panel" id="exp-ista" role="tabpanel">
+            <div class="exp-head">
+              <h3 class="h3">ISTA</h3>
+              <p class="muted">Feb 2025 to Jun 2025</p>
+            </div>
+            <ul class="clean">
+              <li>Theoretical foundations of synthetic data augmentation</li>
+              <li>Random matrix theory characterization of generalization risk</li>
+              <li>Experiments on CIFAR10, ImageNet, RxRx1</li>
+            </ul>
+            <p class="muted tight">
+              Advisors:
+              Prof. <a class="link" href="https://scholar.google.it/citations?user=BHdSb5AAAAAJ&hl=it" target="_blank" rel="noreferrer">Marco Mondelli</a>,
+              Prof. <a class="link" href="https://scholar.google.it/citations?hl=it&user=wQanfTIAAAAJ" target="_blank" rel="noreferrer">Francesco Locatello</a>
+            </p>
+          </div>
+
+          <div class="exp-panel" id="exp-cuhk" role="tabpanel">
+            <div class="exp-head">
+              <h3 class="h3">CUHK</h3>
+              <p class="muted">Jul 2024 to Oct 2024</p>
+            </div>
+            <ul class="clean">
+              <li>Online learning of optimal mixtures of generative models</li>
+              <li>Bandit theory with provable regret via Mixture UCB methods</li>
+              <li>Large scale evaluation across models, feature extractors, metrics</li>
+            </ul>
+            <p class="muted tight">
+              Advisors:
+              Prof. <a class="link" href="https://scholar.google.com/citations?user=GYPCqcYAAAAJ&hl=en" target="_blank" rel="noreferrer">Farzan Farnia</a>,
+              Prof. Cheuk Ting Li
+            </p>
+          </div>
+
+          <div class="exp-panel" id="exp-sharif" role="tabpanel">
+            <div class="exp-head">
+              <h3 class="h3">Sharif ML Lab</h3>
+              <p class="muted">Dec 2023 to Jun 2024</p>
+            </div>
+            <ul class="clean">
+              <li>Spatial relationship alignment in text to image diffusion models</li>
+              <li>Evaluation metrics and test time guidance for spatial adherence</li>
+              <li>Compositional generation study across diffusion and autoregressive models</li>
+            </ul>
+            <p class="muted tight">
+              Advisors:
+              Prof. <a class="link" href="https://scholar.google.com/citations?hl=en&user=S1U0KlgAAAAJ" target="_blank" rel="noreferrer">Mahdieh Soleymani</a>,
+              Prof. <a class="link" href="https://scholar.google.com/citations?hl=en&user=pRyJ6FkAAAAJ" target="_blank" rel="noreferrer">Mohammad Hossein Rohban</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching" class="section">
+      <div class="section-head">
+        <h2 class="h2">Teaching</h2>
+        <p class="muted">Teaching assistant roles and olympiad instruction.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3 class="h3">Teaching assistant</h3>
+          <ul class="clean">
+            <li>Deep Learning, graduate, Spring 2025</li>
+            <li>System 2 AI, graduate, Spring 2025</li>
+            <li>Computer Simulation, Fall 2024 head, Spring 2024, Fall 2023</li>
+            <li>Artificial Intelligence, Fall 2023, Spring 2024</li>
+            <li>Advanced Programming, Spring 2024, Spring 2023</li>
+            <li>Design of Algorithms, Spring 2024</li>
+            <li>Database Design, Spring 2024</li>
+            <li>Discrete Structures, Spring 2024</li>
+            <li>Fundamentals of Programming, Fall 2023, Fall 2022</li>
+            <li>Linear Algebra, Spring 2023, Fall 2023</li>
+            <li>Probability and Statistics, Spring 2024, Fall 2023</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="h3">Mathematics olympiad teaching</h3>
+          <ul class="clean">
+            <li>Allameh Tabatabaei High School, 2022 to 2023, Algebra</li>
+            <li>Allameh Helli High School, 2021 to 2022, Combinatorics and geometry</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <h3 class="h3">Course highlights</h3>
+          <div class="chips">
+            <span class="chip">Information theory, graduate</span>
+            <span class="chip">Convex optimization</span>
+            <span class="chip">Deep learning, graduate</span>
+            <span class="chip">Classic 3D computer vision</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="section">
+      <div class="section-head">
+        <h2 class="h2">Honors and awards</h2>
+        <p class="muted">A quick list of notable awards and contests.</p>
+      </div>
+
+      <div class="grid three">
+        <div class="card subtle">
+          <h3 class="h3">Competitions</h3>
+          <ul class="clean">
+            <li>Sharif MLC challenge, adversarial attack, 1st place</li>
+            <li>ELMO mathematics contest, silver medal</li>
+          </ul>
+        </div>
+
+        <div class="card subtle">
+          <h3 class="h3">Olympiads</h3>
+          <ul class="clean">
+            <li>Iran national mathematics olympiad, silver medal, twice</li>
+            <li>Iranian geometry olympiad, silver medal</li>
+            <li>Thailand international mathematics olympiad, silver medal</li>
+          </ul>
+        </div>
+
+        <div class="card subtle">
+          <h3 class="h3">More</h3>
+          <ul class="clean">
+            <li>Undergraduate excellence awards, TUM CAMP</li>
+            <li>World mathematics championships, gold medal</li>
+            <li>World mathematics team championship, bronze medal</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Projects -->
+    <section id="projects" class="section">
+      <div class="section-head">
+        <h2 class="h2">Other projects</h2>
+        <p class="muted">Coursework, side projects, and unpublished work.</p>
+      </div>
+
+      <div class="grid">
+        {% for post in site.posts %}
+        {% for cat in post.categories %}
+        {% if cat != 'research' and cat != 'Intel' %}
+        <article class="card pub-card">
+          <div class="pub-media">
+            <img src="/tn{{post.image}}" alt="Project image" />
+          </div>
+          <div class="pub-body">
+            <h3 class="h3">{{post.title}}</h3>
+            <p class="muted tight"><em>{{post.categories}} {{post.course}}</em></p>
+            <p class="muted tight">{{ post.date | date: "%Y-%m-%d" }}</p>
+
+            <div class="pub-links">
+              {% if post.website %}<a class="link" href="{{post.website}}">website</a>{% endif %}
+              {% if post.paper %}<a class="link" href="{{post.paper}}">paper</a>{% endif %}
+              {% if post.patent %}<a class="link" href="{{post.patent}}">patent</a>{% endif %}
+              {% if post.patent2 %}<a class="link" href="{{post.patent2}}">patent 2</a>{% endif %}
+              {% if post.patent3 %}<a class="link" href="{{post.patent3}}">patent 3</a>{% endif %}
+              {% if post.video %}<a class="link" href="{{post.video}}">video</a>{% endif %}
+              {% if post.video2 %}<a class="link" href="{{post.video2}}">video 2</a>{% endif %}
+              {% if post.code %}<a class="link" href="{{post.code}}">code</a>{% endif %}
+              {% if post.poster %}<a class="link" href="{{post.poster}}">poster</a>{% endif %}
+              {% if post.slides %}<a class="link" href="{{post.slides}}">slides</a>{% endif %}
+            </div>
+
+            <div class="pub-excerpt">{{ post.excerpt }}</div>
+          </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Misc -->
+    <section id="misc" class="section">
+      <div class="section-head">
+        <h2 class="h2">Miscellaneous</h2>
+        <p class="muted">Outside research, I enjoy reading, tennis, traveling, and new adventures.</p>
+      </div>
+
+      <div class="card subtle">
+        <p class="muted tight">
+          Design inspiration: <a class="link" href="https://jonbarron.info" target="_blank" rel="noreferrer">Jon Barron</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="muted">
+        This page uses a simple static layout with Jekyll loops for posts.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      // Theme
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+
+      function setTheme(mode) {
+        root.dataset.theme = mode;
+        localStorage.setItem("theme", mode);
+      }
+
+      const saved = localStorage.getItem("theme");
+      if (saved) {
+        setTheme(saved);
+      } else {
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(prefersDark ? "dark" : "light");
+      }
+
+      btn.addEventListener("click", () => {
+        const cur = root.dataset.theme === "dark" ? "dark" : "light";
+        setTheme(cur === "dark" ? "light" : "dark");
+      });
+
+      // Mobile nav
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburger.addEventListener("click", () => {
+        const open = mobileNav.hidden === false;
+        mobileNav.hidden = open;
+        hamburger.setAttribute("aria-expanded", String(!open));
+      });
+
+      // Internships logo switcher
+      const buttons = Array.from(document.querySelectorAll(".logo-btn"));
+      const panels = Array.from(document.querySelectorAll(".exp-panel"));
+
+      function activate(targetId) {
+        buttons.forEach(b => {
+          const isActive = b.dataset.target === targetId;
+          b.classList.toggle("is-active", isActive);
+          b.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        panels.forEach(p => p.classList.toggle("is-active", p.id === targetId));
+      }
+
+      buttons.forEach(b => {
+        b.addEventListener("click", () => activate(b.dataset.target));
+      });
+
+      // Default panel
+      activate("exp-epfl");
+    })();
+  </script>
 </body>
-
 </html>
-
