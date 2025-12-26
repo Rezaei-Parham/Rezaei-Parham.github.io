@@ -224,8 +224,8 @@
             <p class="subtitle is-6">Covariance matching selection from a synthetic pool, done per class.</p>
           </div>
 
-          <div class="columns is-variable is-5 is-multiline">
-            <div class="column is-12">
+          <div class="columns is-variable is-5">
+            <div class="column">
               <div class="card-surface">
                 <div class="content">
                   <h3 class="title is-5">Setup</h3>
@@ -391,70 +391,40 @@ Return selected indices S</code></pre>
 
   <!-- Results -->
   <section class="section section-soft" id="results">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-10">
+    <div class="results-stack">
 
-          <div class="section-title">
-            <h2 class="title is-3">Results</h2>
-            <p class="subtitle is-6">The following demonstrates the performance of covariance matching for large-scale models.</p>
-          </div>
-
-          <div class="columns is-variable is-5">
-            <div class="column is-12">
-              <div class="card-surface">
-                <div class="content">
-                  <h3 class="title is-5">CIFAR 10</h3>
-                  <p class="muted">
-                    Covariance matching outperforms all baselines across three training paradigms on CIFAR-10,
-                    when the synthetic data is generated via five truncated StyleGAN2-Ada models.
-                  </p>
-
-              
-
-
-                    <img src="static/file-figs/cifar10fig1.png" alt="CIFAR table placeholder" >
-                   
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-12">
-              <div class="card-surface">
-                <div class="content">
-                  <h3 class="title is-5">ImageNet-100</h3>
-  
-                   <img src="static/file-figs/imagenetfig1.png" alt="imagenet table placeholder" >
-                   
-                
-                </div>
-                
-              </div>
-            </div>
-            <div class="column">
-              <div class="card-surface">
-                <div class="content">
-                  <h3 class="title is-5">RxRx1</h3>
-
-                    <img src="static/file-figs/rxrx1figure.png" alt="rxrx1 table placeholder" >
-                   
-                
-
-                </div>
-                
-              </div>
-            </div>
-            <div class="callout mt-4">
-
-                    <p class="callout-body">
-                      Refer to the paper for more experiments and ablations of various aspects of the experiment setup.
-                    </p>
-                  </div>
-          </div>
-
-        </div>
-      </div>
+  <div class="card-surface mb-5">
+    <div class="content">
+      <h3 class="title is-5">CIFAR-10</h3>
+      <p class="muted">
+        Covariance matching outperforms all baselines across three training paradigms on CIFAR-10,
+        when the synthetic data is generated via five truncated StyleGAN2-Ada models.
+      </p>
+      <img src="static/file-figs/cifar10fig1.png" alt="CIFAR table">
     </div>
+  </div>
+
+  <div class="card-surface mb-5">
+    <div class="content">
+      <h3 class="title is-5">ImageNet-100</h3>
+      <img src="static/file-figs/imagenetfig1.png" alt="ImageNet table">
+    </div>
+  </div>
+
+  <div class="card-surface mb-5">
+    <div class="content">
+      <h3 class="title is-5">RxRx1</h3>
+      <img src="static/file-figs/rxrx1figure.png" alt="RxRx1 table">
+    </div>
+  </div>
+
+  <div class="callout mt-4">
+    <p class="callout-body">
+      Refer to the paper for more experiments and ablations of various aspects of the experimental setup.
+    </p>
+  </div>
+
+</div>
   </section>
 
   <!-- BibTeX -->
