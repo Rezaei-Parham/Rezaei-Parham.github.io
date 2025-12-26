@@ -1,292 +1,510 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
+
   <meta name="description" content="High-dimensional Analysis of Synthetic Data Selection">
-  <meta property="og:title" content="Synthetic Data Selection"/>
+  <meta property="og:title" content="High-dimensional Analysis of Synthetic Data Selection"/>
   <meta property="og:description" content="High-dimensional Analysis of Synthetic Data Selection"/>
   <meta property="og:url" content="https://rezaei-parham.github.io/Synthetic-Selection"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <!-- <meta property="og:image" content="static/file-figs/red_bird_figure.jpg" /> -->
-  <!-- <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/> -->
 
-
-  <meta name="twitter:title" content="Synthetic Data Selection">
+  <meta name="twitter:title" content="High-dimensional Analysis of Synthetic Data Selection">
   <meta name="twitter:description" content="High-dimensional Analysis of Synthetic Data Selection">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <!-- <meta name="twitter:image" content="static/file-figs/red_bird_figure.jpg"> -->
-  <!-- <meta name="twitter:card" content="mixture of models outperforming individual models"> -->
-  <!-- Keywords for your paper to be indexed by-->
+
   <meta name="keywords" content="high-dimensional, generative models, synthetic data, random matrix theory">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>High-dimensional Analysis of Synthetic Data Selection</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
   </script>
 
+  <script defer src="static/js/index.js"></script>
 </head>
+
 <body>
 
+  <!-- Top nav -->
+  <nav class="navbar is-transparent nav-glass" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item brand-mark" href="#top">
+        <span class="brand-dot"></span>
+        <span class="brand-text">Synthetic Selection</span>
+      </a>
 
-  <section class="hero">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="#overview">Overview</a> -->
+        <a class="navbar-item" href="#method">Method</a>
+        <!-- <a class="navbar-item" href="#theory">Theory</a> -->
+        <a class="navbar-item" href="#results">Results</a>
+        <!-- <a class="navbar-item" href="#resources">Resources</a> -->
+        <a class="navbar-item" href="#BibTeX">BibTeX</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-top" id="top">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title gradient-text">High-dimensional Analysis of Synthetic Data Selection</h1>
+
+            <!-- <p class="pill-top">ICLR 2026 submission</p> -->
+
+            <h1 class="title is-1 publication-title gradient-text">
+              High-dimensional Analysis of Synthetic Data Selection
+            </h1>
+
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=1xWK-VAAAAAJ&hl=en" target="_blank">Parham Rezaei</a><sup>✨</sup>,</span>
-                <span class="author-block">
-                  <a href="https://scholar.google.com/citations?hl=en&user=x-lmjSEAAAAJ" target="_blank">Filip Kovacevic</a><sup>✨</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://scholar.google.com/citations?hl=en&user=wQanfTIAAAAJ" target="_blank">Francesco Locatello</a><sup>✨</sup>
-                  </span>
-                  <span class="author-block">
-                    <a href="https://scholar.google.com/citations?hl=en&user=BHdSb5AAAAAJ" target="_blank">Marco Mondelli</a><sup>✨</sup>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>✨</sup> Institute of Science and Technology (ISTA)</span>
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <!-- <span class="link-block">
-                        <a href="https://openreview.net/pdf?id=2Chkk5Ye2s" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span> -->
-
-                    <!-- Supplementary PDF link -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/Rezaei-Parham/Synthetic-Selection" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2510.08123" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+                <a href="https://scholar.google.com/citations?user=1xWK-VAAAAAJ&hl=en" target="_blank" rel="noreferrer">Parham Rezaei</a><sup>✨</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=x-lmjSEAAAAJ" target="_blank" rel="noreferrer">Filip Kovacevic</a><sup>✨</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=wQanfTIAAAAJ" target="_blank" rel="noreferrer">Francesco Locatello</a><sup>✨</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=BHdSb5AAAAAJ" target="_blank" rel="noreferrer">Marco Mondelli</a><sup>✨</sup>
               </span>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+            <div cSynthetic-Selection/static/file-figs/covmatchingfigure.pnglass="is-size-6 publication-authors sub-affil">
+              <span class="author-block"><sup>✨</sup> Institute of Science and Technology Austria (ISTA)</span>
+            </div>
 
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="hero-body">
-    <div class="container" style="text-align: center;">
-          <img src="static/file-figs/red_bird_algorithms-figure.jpg" class="inline-figure-six" alt="Mixutre-UCB Comparison." width="500" height="500"/>
-       <p>Comparison of our proposed algorithms Mixture-UCB-CAB and Mixture-UCB-OGD
-        with the baseline one arm online algorithms. We plot the diversity-measuring RKE score of the
-        generated data and display 9 (randomly-selected) samples produced in the process of each algorithm.</p>
-      </div>
-    </div>
-</section> -->
-<!-- End teaser video -->
+            <div class="hero-links">
+              <a href="https://arxiv.org/abs/2510.08123" target="_blank" rel="noreferrer"
+                 class="button is-rounded btn-hero">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-          Despite the progress in the development of generative models, their usefulness in creating synthetic data that improve prediction performance of classifiers has been put into question. Besides heuristic principles such as "synthetic data should be close to the real data distribution", it is actually not clear which specific properties affect the generalization error. Our paper addresses this question through the lens of high-dimensional regression. Theoretically, we show that, for linear models, the covariance shift between the target distribution and the distribution of the synthetic data affects the generalization error but, surprisingly, the mean shift does not. Furthermore we prove that, in some settings, matching the covariance of the target distribution is optimal. Remarkably, the theoretical insights from linear models carry over to deep neural networks and generative models. We empirically demonstrate that the covariance matching procedure (matching the covariance of the synthetic data with that of the data coming from the target distribution) performs well against several recent approaches for synthetic data selection, across training paradigms, architectures, datasets and generative models used for augmentation.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+              <!-- Optional: host the PDF at static/pdfs/paper.pdf -->
+              <a href="static/pdfs/paper.pdf" target="_blank" rel="noreferrer"
+                 class="button is-rounded btn-hero is-light">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper PDF</span>
+              </a>
 
+              <a href="https://github.com/Rezaei-Parham/Synthetic-Selection" target="_blank" rel="noreferrer"
+                 class="button is-rounded btn-hero is-light">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </div>
 
-<!-- Image carousel -->
-<!-- <div class="hr"></div>
+            <!-- Teaser figure -->
+            <div class="teaser-wrap">
+              <!-- Replace with your teaser figure -->
+              <img
+                src="static/file-figs/fig1.png"
+                alt="Teaser figure placeholder"
+                class="teaser-img"
+              />
+              <p class="caption">
+                How to select the synthetic data?
+              </p>
+            </div>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width has-text-justified">
-          <h2 class="title is-3 has-text-centered">
-            TL;DR
-          </h2>
-          <div class="content has-text-justified">
-            <p>
-             
-            </p>
           </div>
-          <br />
-          <div class="content has-text-centered">
-            <img src="./static/file-figs/ffhq-figure1-percentVersion.jpg" class="inline-figure-six" alt="Neural Jacobian Field Data." />
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              
-            </p>
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/file-figs/red_bird_figure.jpg" class="inline-figure-six" alt="Neural Jacobian Field Training." />
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              
-            </p>
-          </div>
-          <br />
         </div>
       </div>
     </div>
   </section>
 
-  <div class="hr"></div> -->
-<!-- End image carousel -->
+  <!-- Overview -->
+  <!-- section class="section section-soft" id="overview">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10">
 
+          <div class="section-title">
+            <h2 class="title is-3">Overview</h2>
+            <p class="subtitle is-6">
+              When synthetic data helps, and what to select from a generated pool.
+            </p>
+          </div>
 
+          <div class="card-surface">
+            <div class="content">
+              <p class="tldr">
+                <strong>TLDR</strong>
+                In high dimensional regression with real plus synthetic augmentation, generalization depends on
+                <strong>covariance shift</strong>, not mean shift, and <strong>covariance matching</strong> can be optimal.
+              </p>
 
+              <div class="columns is-variable is-5 mt-4">
+                <div class="column">
+                  <div class="mini-card">
+                    <p class="mini-title">Core finding</p>
+                    <p class="mini-body">
+                      With enough real training samples relative to synthetic data, the asymptotic test error depends on
+                      covariances, and is insensitive to distribution means.
+                    </p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="mini-card">
+                    <p class="mini-title">Practical procedure</p>
+                    <p class="mini-body">
+                      Select synthetic samples so that feature covariance of selected samples matches the real feature covariance,
+                      per class.
+                    </p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="mini-card">
+                    <p class="mini-title">Empirical takeaway</p>
+                    <p class="mini-body">
+                      Covariance matching is competitive or better than recent selectors across training paradigms, datasets,
+                      architectures, and generators.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-<!-- Youtube video -->
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width has-text-justified">
-        <h2 class="title is-3 has-text-centered">
-          Algorithms
-        </h2>
-        <div class="content has-text-justified">
-          <p>
-           </p>
-        </div>
-        <br />
-        <div class="content has-text-centered">
-          <img src="./static/file-figs/mixture-ucb-cab.png" class="inline-figure-six" alt="Neural Jacobian Field Data." />
-        </div>
-        <div class="content has-text-justified">
-          <p>
-             
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <img src="./static/file-figs/mixture-ucb-ogd.png" class="inline-figure-six" alt="Neural Jacobian Field Training." />
-        </div>
-        <div class="content has-text-justified">
-          <p>
-           </p>
-        </div>
-        <br />
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-
-
-
-
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{rezaei2025highdimensionalanalysissyntheticdata,
-      title={High-dimensional Analysis of Synthetic Data Selection}, 
-      author={Parham Rezaei and Filip Kovacevic and Francesco Locatello and Marco Mondelli},
-      year={2025},
-      eprint={2510.08123},
-      archivePrefix={arXiv},
-      primaryClass={stat.ML},
-      url={https://arxiv.org/abs/2510.08123}, 
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+            </div>
+          </div>
 
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- Statcounter tracking code -->
+  <!-- Abstract -->
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <div class="section-title">
+            <h2 class="title is-3">Abstract</h2>
+          </div>
+          <div class="card-surface">
+            <div class="content has-text-justified">
+              <p>
+                Despite the progress in the development of generative models, their usefulness in creating synthetic data that improve prediction performance of classifiers has been put into question. Besides heuristic principles such as "synthetic data should be close to the real data distribution", it is actually not clear which specific properties affect the generalization error. Our paper addresses this question through the lens of high-dimensional regression. Theoretically, we show that, for linear models, the covariance shift between the target distribution and the distribution of the synthetic data affects the generalization error but, surprisingly, the mean shift does not. Furthermore we prove that, in some settings, matching the covariance of the target distribution is optimal. Remarkably, the theoretical insights from linear models carry over to deep neural networks and generative models. We empirically demonstrate that the covariance matching procedure (matching the covariance of the synthetic data with that of the data coming from the target distribution) performs well against several recent approaches for synthetic data selection, across training paradigms, architectures, datasets and generative models used for augmentation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section section-soft" id="method">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10">
+
+          <div class="section-title">
+            <h2 class="title is-3">Method</h2>
+            <p class="subtitle is-6">Covariance matching selection from a synthetic pool, done per class.</p>
+          </div>
+
+          <div class="columns is-variable is-5">
+            <div class="column">
+              <div class="card-surface">
+                <div class="content">
+                  <h3 class="title is-5">Setup</h3>
+                  <ul>
+                    <li>Real training set \((X_t, y_t)\) and synthetic augmentation set \((X_s, y_s)\).</li>
+                    <li>Train on the union, evaluate on test distribution matching real training.</li>
+                    <li>Selection is done class by class from a generated pool.</li>
+                  </ul>
+
+                  <div class="divider"></div>
+
+                  <h3 class="title is-5">Selection objective</h3>
+                  <p>
+                    In practice, compute features for real and synthetic samples (CLIP is a strong default).
+                    Then select a subset of synthetic samples whose sample covariance best matches the real sample covariance.
+                  </p>
+
+                  <pre class="codebox"><code># Pseudocode (per class)
+Input: real features R (nt x p), synthetic pool features P (N x p), target size ns
+Fit PCA on R, keep d dims (e.g., d = 32)
+Project: R_d, P_d
+Compute target covariance Ct = cov(R_d)
+
+S = empty
+while |S| &lt; ns:
+  pick x in pool that minimizes || cov(S ∪ {x}) - Ct ||_F
+  add x to S
+
+Return selected indices S</code></pre>
+
+                  <p class="hint">
+                    Replace feature extractor, distance, or greedy step with your preferred implementation.
+                  </p>
+                    <!-- Replace with your method diagram -->
+                    <img src="static/file-figs/covmatchingfigure.png" alt="cov matching">
+                    <p class="caption">
+                      covariance matching gradually selects data matching the sample covariance matrix of the real samples.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theory with 3-level slider -->
+  <!-- section class="section" id="theory">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10">
+
+          <div class="section-title">
+            <h2 class="title is-3">Theory</h2>
+            <p class="subtitle is-6">Use the slider to choose the depth level.</p>
+          </div>
+
+          <div class="card-surface">
+            <div class="theory-controls">
+              <div class="theory-labels">
+                <span class="theory-tag" data-level-label="0">Intuition</span>
+                <span class="theory-tag" data-level-label="1">Main result</span>
+                <span class="theory-tag" data-level-label="2">More complete</span>
+              </div>
+
+              <input
+                id="theorySlider"
+                class="theory-slider"
+                type="range"
+                min="0"
+                max="2"
+                step="1"
+                value="0"
+                aria-label="Theory depth slider"
+              />
+
+              <div class="theory-meter">
+                <span id="theoryMeterText">Intuition</span>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="theory-panels">
+              <div class="theory-panel is-active" data-level="0">
+                <div class="content">
+                  <h3 class="title is-5">Intuition</h3>
+                  <p>
+                    Think of synthetic data as additional samples that help cover the directions that matter for predicting labels.
+                    In high dimensions, what matters most is how the data spreads across directions, captured by covariance.
+                    Shifting the average feature value can look important, but for the mixed training regime it does not control the
+                    same part of the generalization error.
+                  </p>
+                  <p>
+                    That leads to a simple rule: if you can only choose a subset of generated samples, choose the subset whose
+                    feature covariance looks like the real data covariance, per class.
+                  </p>
+                </div>
+              </div>
+
+              <div class="theory-panel" data-level="1">
+                <div class="content">
+                  <h3 class="title is-5">Main result</h3>
+                  <p>
+                    Model two datasets: real training \((X_t, y_t)\) and synthetic \((X_s, y_s)\), with the same underlying linear
+                    parameter \(\omega\), but different feature distributions.
+                    The feature means are \(\mu_t, \mu_s\) and covariances are \(\Sigma_t, \Sigma_s\).
+                  </p>
+                  <p>
+                    In the high dimensional limit (dimensions and sample sizes scale together), the asymptotic excess risk for
+                    min norm least squares trained on the union depends on \(\Sigma_t\) and \(\Sigma_s\), and does not depend on
+                    \(\mu_t\) and \(\mu_s\), under the regime conditions described in the paper.
+                  </p>
+                  <p class="mathline">
+                    A key object is \(M = \Sigma_s^{1/2}\Sigma_t^{-1/2}\), and the deterministic limit risk depends on the spectrum of \(M^\top M\).
+                  </p>
+                </div>
+              </div>
+
+              <div class="theory-panel" data-level="2">
+                <div class="content">
+                  <h3 class="title is-5">More complete</h3>
+                  <p>
+                    The analysis considers ridgeless regression in both under parameterized and over parameterized regimes.
+                    In the under parameterized case, the bias vanishes and the variance admits a deterministic equivalent that
+                    depends on \(M = \Sigma_s^{1/2}\Sigma_t^{-1/2}\) through a trace of an inverse form.
+                  </p>
+                  <p>
+                    Optimizing this limit under a natural normalization yields covariance matching as optimal, meaning the best
+                    choice is \(\Sigma_s = \Sigma_t\) in the corresponding setting.
+                    In contrast, if training uses only synthetic data and testing uses real data, the mean shift matters and appears
+                    explicitly in the error expression.
+                  </p>
+
+                  <div class="callout">
+                    <p class="callout-title">Practical bridge to deep learning</p>
+                    <p class="callout-body">
+                      The paper shows the covariance based insight transfers beyond linear models, and a covariance matching
+                      selector built on image features works well with modern architectures and generators.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+
+            <div class="divider"></div>
+
+          
+            <img src="static/file-figs/plotsfig1.png" alt="Theory figure placeholder">
+                    <p class="caption">
+                    In the plots, we observe that the theoretical derivations match the empirical performance.
+                    </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section section-soft" id="results">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10">
+
+          <div class="section-title">
+            <h2 class="title is-3">Results</h2>
+            <p class="subtitle is-6">The following demonstrates the performance of covariance matching for large-scale models.</p>
+          </div>
+
+          <div class="columns is-variable is-5">
+            <div class="column">
+              <div class="card-surface">
+                <div class="content">
+                  <h3 class="title is-5">CIFAR 10</h3>
+                  <p class="muted">
+                    Covariance matching outperforms all baselines across three training paradigms on CIFAR-10,
+                    when the synthetic data is generated via five truncated StyleGAN2-Ada models.
+                  </p>
+
+              
+
+
+                    <img src="static/file-figs/cifar10fig1.png" alt="CIFAR table placeholder" >
+                   
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card-surface">
+                <div class="content">
+                  <h3 class="title is-5">ImageNet-100</h3>
   
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+                   <img src="static/file-figs/imagenetfig1.png" alt="imagenet table placeholder" >
+                   
+                
+                </div>
+                
+              </div>
+            </div>
+            <div class="column">
+              <div class="card-surface">
+                <div class="content">
+                  <h3 class="title is-5">RxRx1</h3>
 
-    <!-- End of Statcounter Code -->
+                    <img src="static/file-figs/rxrx1figure.png" alt="rxrx1 table placeholder" >
+                   
+                
 
-  </body>
-  </html>
+                </div>
+                
+              </div>
+            </div>
+            <div class="callout mt-4">
+
+                    <p class="callout-body">
+                      Refer to the paper for more experiments and ablations of various aspects of the experiment setup.
+                    </p>
+                  </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="section-title">
+            <h2 class="title is-3">BibTeX</h2>
+          </div>
+          <div class="card-surface">
+            <pre class="codebox"><code>@misc{rezaei2025highdimensionalanalysissyntheticdata,
+  title={High-dimensional Analysis of Synthetic Data Selection},
+  author={Parham Rezaei and Filip Kovacevic and Francesco Locatello and Marco Mondelli},
+  year={2025},
+  eprint={2510.08123},
+  archivePrefix={arXiv},
+  primaryClass={stat.ML},
+  url={https://arxiv.org/abs/2510.08123},
+}</code></pre>
+</br>
+<pre class="codebox"><code>@inproceedings{
+rezaei2025highdimensional,
+title={High-dimensional Analysis of Synthetic Data Selection},
+author={Parham Rezaei and Filip Kova{\v{c}}evi{\'c} and Francesco Locatello and Marco Mondelli},
+booktitle={EurIPS 2025 Workshop on Principles of Generative Modeling (PriGM)},
+year={2025},
+url={https://openreview.net/forum?id=LkLRHXsvWG}
+}</code></pre>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer footer-soft">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+          
+            <p class="muted">
+              Copyright © Parhram Rezaei 2025
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
