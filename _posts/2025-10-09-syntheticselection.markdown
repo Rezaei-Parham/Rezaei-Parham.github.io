@@ -6,7 +6,7 @@ image: /images/syntheticselection.png
 categories: research
 author: "Parham Rezaei"
 authors: "<strong>Parham Rezaei</strong>, Filip Kovacevic, Francesco Locatello, Marco Mondelli"
-venue: "PriGM Wrokshop @ EurIPS25 (Shorter Version), Under Review"
+venue: "ICLR (Oral)"
 arxiv: https://arxiv.org/abs/2510.08123
 code: https://github.com/rezaei-parham/Synthetic-Selection
 website: https://rezaei-parham.github.io/Synthetic-Selection/
