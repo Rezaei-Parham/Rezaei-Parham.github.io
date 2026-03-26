@@ -4,7 +4,7 @@
 :root {
   --bg: #efe6d8;
   --bg-accent: #dfcfb9;
-  --surface: rgba(248, 242, 232, 0.8);
+  --surface: rgba(248, 242, 232, 0.94);
   --surface-strong: #f6efe5;
   --surface-muted: rgba(103, 91, 72, 0.08);
   --border: rgba(93, 82, 67, 0.15);
@@ -88,7 +88,7 @@ body::after {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.8;
+  opacity: 0.34;
 }
 
 .site-chrome::before {
@@ -379,7 +379,7 @@ strong {
   gap: 22px;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: rgba(247, 241, 232, 0.76);
+  background: rgba(247, 241, 232, 0.95);
   padding: 22px;
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, background-color 260ms ease;
   will-change: transform;
@@ -392,7 +392,7 @@ strong {
   transform: translateY(-4px);
   border-color: rgba(95, 87, 71, 0.18);
   box-shadow: 0 22px 56px rgba(53, 43, 31, 0.11);
-  background: rgba(250, 245, 237, 0.92);
+  background: rgba(250, 245, 237, 0.98);
 }
 
 .publication-card {
@@ -520,6 +520,7 @@ strong {
 .info-card {
   padding: 28px;
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, background-color 260ms ease;
+  background: rgba(248, 242, 232, 0.95);
 }
 
 .info-card--wide {
@@ -588,7 +589,7 @@ strong {
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--text);
-  background: rgba(248, 242, 232, 0.94);
+  background: rgba(248, 242, 232, 0.98);
 }
 
 .back-link:hover {

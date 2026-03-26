@@ -13,6 +13,8 @@
   const nodes = [];
   const maxNodes = 72;
   const connectionDistance = 150;
+  const minInitialNodes = 30;
+  const maxInitialNodes = 52;
   const nodeColor = "rgba(79, 93, 68, 0.45)";
   const lineColorBase = "109, 92, 66";
 
@@ -29,8 +31,8 @@
     return {
       x,
       y,
-      vx: prefersReducedMotion ? 0 : randomBetween(-0.12, 0.12),
-      vy: prefersReducedMotion ? 0 : randomBetween(-0.12, 0.12),
+      vx: prefersReducedMotion ? 0 : randomBetween(-0.04, 0.04),
+      vy: prefersReducedMotion ? 0 : randomBetween(-0.04, 0.04),
       radius: emphasize ? randomBetween(2.8, 3.8) : randomBetween(1.4, 2.8),
     };
   }
@@ -60,7 +62,7 @@
 
   function seedNodes() {
     nodes.length = 0;
-    const initialCount = Math.max(18, Math.min(42, Math.round((width * height) / 42000)));
+    const initialCount = Math.max(minInitialNodes, Math.min(maxInitialNodes, Math.round((width * height) / 36000)));
 
     for (let i = 0; i < initialCount; i += 1) {
       nodes.push(createNode());
@@ -80,9 +82,11 @@
       return;
     }
 
+    const speedFactor = delta / 16;
+
     for (const node of nodes) {
-      node.x += node.vx * delta;
-      node.y += node.vy * delta;
+      node.x += node.vx * speedFactor;
+      node.y += node.vy * speedFactor;
 
       if (node.x <= 0 || node.x >= width) {
         node.vx *= -1;
