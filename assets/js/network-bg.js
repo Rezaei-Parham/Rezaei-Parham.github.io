@@ -11,10 +11,10 @@
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const nodes = [];
-  const maxNodes = 72;
-  const connectionDistance = 150;
-  const minInitialNodes = 30;
-  const maxInitialNodes = 52;
+  const maxNodes = 110;
+  const connectionDistance = 185;
+  const minInitialNodes = 42;
+  const maxInitialNodes = 68;
   const nodeColor = "rgba(79, 93, 68, 0.45)";
   const lineColorBase = "109, 92, 66";
 
@@ -31,8 +31,8 @@
     return {
       x,
       y,
-      vx: prefersReducedMotion ? 0 : randomBetween(-0.04, 0.04),
-      vy: prefersReducedMotion ? 0 : randomBetween(-0.04, 0.04),
+      vx: prefersReducedMotion ? 0 : randomBetween(-0.065, 0.065),
+      vy: prefersReducedMotion ? 0 : randomBetween(-0.065, 0.065),
       radius: emphasize ? randomBetween(2.8, 3.8) : randomBetween(1.4, 2.8),
     };
   }
@@ -62,7 +62,7 @@
 
   function seedNodes() {
     nodes.length = 0;
-    const initialCount = Math.max(minInitialNodes, Math.min(maxInitialNodes, Math.round((width * height) / 36000)));
+    const initialCount = Math.max(minInitialNodes, Math.min(maxInitialNodes, Math.round((width * height) / 28000)));
 
     for (let i = 0; i < initialCount; i += 1) {
       nodes.push(createNode());
@@ -113,7 +113,7 @@
           continue;
         }
 
-        const alpha = (1 - distance / connectionDistance) * 0.32;
+        const alpha = (1 - distance / connectionDistance) * 0.36;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
