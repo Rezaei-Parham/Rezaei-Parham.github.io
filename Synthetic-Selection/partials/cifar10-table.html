@@ -1,0 +1,84 @@
+<table class="results-table">
+  <thead>
+    <tr>
+      <th>Selection Algorithm</th>
+      <th class="r col-scratch" data-col="scratch"></th>
+      <th class="r col-distilled" data-col="distilled"></th>
+      <th class="r col-pretrained" data-col="pretrained"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="method">No synthetic</td>
+      <td class="r col-scratch" data-col="scratch">44.36 <span class="pm">± 1.51</span></td>
+      <td class="r col-distilled" data-col="distilled">47.33 <span class="pm">± 0.57</span></td>
+      <td class="r col-pretrained" data-col="pretrained">63.40 <span class="pm">± 1.33</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">Center matching</td>
+      <td class="r col-scratch" data-col="scratch">50.04 <span class="pm">± 2.84</span></td>
+      <td class="r col-distilled" data-col="distilled">53.83 <span class="pm">± 0.59</span></td>
+      <td class="r col-pretrained" data-col="pretrained">67.01 <span class="pm">± 0.89</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">Center sampling</td>
+      <td class="r col-scratch" data-col="scratch">50.48 <span class="pm">± 2.03</span></td>
+      <td class="r col-distilled" data-col="distilled">54.91 <span class="pm">± 1.07</span></td>
+      <td class="r col-pretrained" data-col="pretrained">67.71 <span class="pm">± 0.90</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">DS3</td>
+      <td class="r col-scratch" data-col="scratch">52.83 <span class="pm">± 2.19</span></td>
+      <td class="r col-distilled" data-col="distilled">58.32 <span class="pm">± 0.43</span></td>
+      <td class="r col-pretrained" data-col="pretrained">68.21 <span class="pm">± 0.66</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">K-means</td>
+      <td class="r col-scratch" data-col="scratch">50.74 <span class="pm">± 1.77</span></td>
+      <td class="r col-distilled" data-col="distilled">56.06 <span class="pm">± 0.68</span></td>
+      <td class="r col-pretrained" data-col="pretrained">66.50 <span class="pm">± 1.11</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">Random</td>
+      <td class="r col-scratch" data-col="scratch">49.38 <span class="pm">± 2.43</span></td>
+      <td class="r col-distilled" data-col="distilled">54.89 <span class="pm">± 0.91</span></td>
+      <td class="r col-pretrained" data-col="pretrained">67.65 <span class="pm">± 0.77</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">Text matching</td>
+      <td class="r col-scratch" data-col="scratch">50.94 <span class="pm">± 1.40</span></td>
+      <td class="r col-distilled" data-col="distilled">55.17 <span class="pm">± 0.57</span></td>
+      <td class="r col-pretrained" data-col="pretrained">67.81 <span class="pm">± 0.76</span></td>
+    </tr>
+
+    <tr>
+      <td class="method">Text sampling</td>
+      <td class="r col-scratch" data-col="scratch">50.28 <span class="pm">± 1.18</span></td>
+      <td class="r col-distilled" data-col="distilled">54.82 <span class="pm">± 0.72</span></td>
+      <td class="r col-pretrained" data-col="pretrained">67.45 <span class="pm">± 1.02</span></td>
+    </tr>
+
+    <tr class="is-ours">
+      <td class="method">
+        Covariance matching <span class="tag-ours">Ours</span>
+      </td>
+      <td class="r col-scratch" data-col="scratch"><strong>54.00</strong> <span class="pm">± 1.89</span></td>
+      <td class="r col-distilled" data-col="distilled"><strong>59.77</strong> <span class="pm">± 0.61</span></td>
+      <td class="r col-pretrained" data-col="pretrained"><strong>69.20</strong> <span class="pm">± 0.56</span></td>
+    </tr>
+
+    <tr class="is-upper">
+      <td class="method">Real upper bound</td>
+      <td class="r col-scratch" data-col="scratch">61.08 <span class="pm">± 2.54</span></td>
+      <td class="r col-distilled" data-col="distilled">65.38 <span class="pm">± 0.51</span></td>
+      <td class="r col-pretrained" data-col="pretrained">74.35 <span class="pm">± 0.56</span></td>
+    </tr>
+  </tbody>
+</table>
