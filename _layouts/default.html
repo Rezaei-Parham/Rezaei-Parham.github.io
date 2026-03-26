@@ -29,6 +29,7 @@
 </head>
 {% assign is_homepage = page.url == "/" or page.name == "index.md" %}
 <body class="{% if is_homepage %}home-template{% else %}page-template{% endif %}">
+  <canvas class="network-canvas" id="network-canvas" aria-hidden="true"></canvas>
   <div class="site-chrome">
     {% if is_homepage %}
     <main class="page-shell">
@@ -284,5 +285,6 @@
     </main>
     {% endif %}
   </div>
+  <script src="{{ site.baseurl }}/assets/js/network-bg.js"></script>
 </body>
 </html>
