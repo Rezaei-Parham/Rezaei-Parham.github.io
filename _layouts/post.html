@@ -1,3 +1,45 @@
 ---
 layout: default
 ---
+<article class="page-article">
+  <a class="back-link" href="{{ site.baseurl }}/">Home</a>
+  <p class="eyebrow">Research note</p>
+  <h1>{{ page.title }}</h1>
+
+  {% if page.authors %}
+  <div class="page-article__meta">{{ page.authors }}</div>
+  {% endif %}
+
+  {% if page.venue or page.date %}
+  <p class="page-article__subhead">
+    {% if page.venue %}<em>{{ page.venue }}</em>{% endif %}
+    {% if page.venue and page.date %} · {% endif %}
+    {% if page.date %}{{ page.date | date: "%B %Y" }}{% endif %}
+  </p>
+  {% endif %}
+
+  <div class="chip-cluster chip-cluster--article">
+    {% if page.arxiv %}
+    <a class="mini-chip" href="{{ page.arxiv }}">arXiv</a>
+    {% endif %}
+    {% if page.code %}
+    <a class="mini-chip" href="{{ page.code }}">Code</a>
+    {% endif %}
+    {% if page.website %}
+    <a class="mini-chip" href="{{ page.website }}">Website</a>
+    {% endif %}
+    {% if page.video %}
+    <a class="mini-chip" href="{{ page.video }}">Video</a>
+    {% endif %}
+    {% if page.poster %}
+    <a class="mini-chip" href="{{ page.poster }}">Poster</a>
+    {% endif %}
+    {% if page.slides %}
+    <a class="mini-chip" href="{{ page.slides }}">Slides</a>
+    {% endif %}
+  </div>
+
+  <div class="page-article__content">
+    {{ content }}
+  </div>
+</article>
