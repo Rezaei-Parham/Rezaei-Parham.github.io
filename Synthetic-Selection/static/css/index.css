@@ -670,6 +670,9 @@ a{
   border-radius: 14px;
   border: 1px solid var(--stroke);
   background: rgba(255,255,255,0.70);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .mathblock{
@@ -678,7 +681,14 @@ a{
   border: 1px solid var(--stroke);
   background: rgba(255,255,255,0.70);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: 12px 0;
+  max-width: 100%;
+}
+
+.mathline mjx-container,
+.mathblock mjx-container{
+  max-width: none;
 }
 
 .mathblock-compact{
@@ -970,7 +980,9 @@ a{
   }
 
   .results-table{
-    min-width: 520px;
+    width: max-content;
+    min-width: 500px;
+    max-width: none;
     font-size: 0.94rem;
   }
 
@@ -1052,6 +1064,8 @@ a{
 .results-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   background: #ffffff;
