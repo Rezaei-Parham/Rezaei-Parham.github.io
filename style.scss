@@ -255,9 +255,9 @@ strong {
 }
 
 .hero-portrait {
-  aspect-ratio: 1 / 1.12;
   width: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: 0;
 }
 
@@ -311,7 +311,8 @@ strong {
 
 .publication-thumb,
 .project-thumb {
-  overflow: hidden;
+  display: block;
+  overflow: visible;
   border-radius: 0;
   border: 0;
   background: transparent;
@@ -320,14 +321,9 @@ strong {
 .publication-thumb img,
 .project-thumb img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform 280ms ease;
-}
-
-.publication-card:hover .publication-thumb img,
-.project-card:hover .project-thumb img {
-  transform: scale(1.04);
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .publication-body,
