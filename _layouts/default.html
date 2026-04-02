@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% assign is_homepage = page.url == "/" or page.name == "index.md" %}
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BW2NXSSWD"></script>
@@ -11,23 +12,36 @@
     gtag('config', 'G-2BW2NXSSWD');
   </script>
 
-  {% if page.title and page.title != "Home" %}
-  <title>{{ page.title }} | {{ site.name }}</title>
+  {% assign site_title = site.name %}
+  {% if is_homepage %}
+  {% assign page_description = "Parham Rezaei's homepage. Research in generative models, synthetic data, sampling methods, and flow models." %}
+  {% elsif page.excerpt %}
+  {% assign page_description = page.excerpt | markdownify | strip_html | strip_newlines | normalize_whitespace %}
   {% else %}
-  <title>{{ site.name }}</title>
+  {% assign page_description = "Parham Rezaei's homepage. Research in generative models, synthetic data, sampling methods, and flow models." %}
   {% endif %}
+
+  <title>{{ site_title }}</title>
 
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="author" content="{{ site.name }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#efe6d8">
+  <meta name="description" content="{{ page_description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ site_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:type" content="{% if is_homepage %}website{% else %}article{% endif %}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ site_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
 </head>
-{% assign is_homepage = page.url == "/" or page.name == "index.md" %}
 <body class="{% if is_homepage %}home-template{% else %}page-template{% endif %}">
   <canvas class="network-canvas" id="network-canvas" aria-hidden="true"></canvas>
   <div class="site-chrome">
