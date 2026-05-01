@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "(1D) Ordered Tokens Enable Efficient Test-Time Search"
+date:   2025-10-09 22:21:59 +00:00
+image: /images/houses.png
+categories: research
+author: "Parham Rezaei"
+authors: "Zhitong Gao, <strong>Parham Rezaei</strong>, Ali Cy, Mingqiao Ye, Nataša Jovanović, Jesse Allardice, Afshin Dehghan, Amir Zamir, Roman Bachmann, Oğuzhan Fatih Kar"
+venue: "ICML"
+arxiv: https://arxiv.org/abs/2604.15453
+website: https://huggingface.co/spaces/EPFL-VILAB/search-over-tokens
+---
+Through controlled experiments, we find that AR models trained on coarse-to-fine ordered tokens exhibit improved test-time scaling behavior compared to grid-based counterparts.
