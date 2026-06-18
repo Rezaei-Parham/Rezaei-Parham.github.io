@@ -8,6 +8,6 @@ author: "Parham Rezaei"
 authors: "Zhitong Gao, <strong>Parham Rezaei</strong>, Ali Cy, Mingqiao Ye, Nataša Jovanović, Jesse Allardice, Afshin Dehghan, Amir Zamir, Roman Bachmann, Oğuzhan Fatih Kar"
 venue: "ICML"
 arxiv: https://arxiv.org/abs/2604.15453
-website: https://huggingface.co/spaces/EPFL-VILAB/search-over-tokens
+website: https://soto.epfl.ch/
 ---
 Through controlled experiments, we find that AR models trained on coarse-to-fine ordered tokens exhibit improved test-time scaling behavior compared to grid-based counterparts.
