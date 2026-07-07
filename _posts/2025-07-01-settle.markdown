@@ -10,4 +10,4 @@ venue: "TMLR"
 arxiv: https://arxiv.org/abs/2506.23418
 code: https://github.com/Rezaei-Parham/Why_Settle_for_Mid
 ---
-We proposed a new way to look at the spatial relationship alignment in T2I models and how to use it to improve the adherence of generated images to textual descriptions.
+We proposed a probabilistic view of spatial relationship alignment in text-to-image models and used it to improve how well generated images follow textual descriptions.

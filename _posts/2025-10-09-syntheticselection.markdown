@@ -11,4 +11,4 @@ arxiv: https://arxiv.org/abs/2510.08123
 code: https://github.com/rezaei-parham/Synthetic-Selection
 website: https://rezaei-parham.github.io/Synthetic-Selection/
 ---
-We analyzed augmenting data from a generative model from the perspective of random matrix theory.
+We analyzed data augmentation with generative models from a random matrix theory perspective.

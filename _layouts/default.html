@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-{% assign is_homepage = page.url == "/" or page.name == "index.md" %}
+{% assign is_homepage = false %}
+{% if page.url == "/" or page.name == "index.md" %}
+{% assign is_homepage = true %}
+{% endif %}
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BW2NXSSWD"></script>
@@ -26,7 +29,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="author" content="{{ site.name }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#efe6d8">
+  <meta name="theme-color" content="#f3f6f4">
   <meta name="description" content="{{ page_description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/tn/images/caticon.png">
@@ -48,37 +51,69 @@
   <canvas class="network-canvas" id="network-canvas" aria-hidden="true"></canvas>
   <div class="site-chrome">
     {% if is_homepage %}
-    <main class="page-shell">
-      <section class="hero-card">
-        <div class="hero-copy">
-          <h1>Parham Rezaei</h1>
-          <p class="hero-lede">I study how to make generative models more steerable, reliable, and scalable.</p>
-          <p>
-            I am a final-year undergraduate student in Computer Engineering at Sharif University of Technology.
+    <aside class="identity-rail" aria-label="Identity and navigation">
+      <a class="identity-mark" href="{{ site.baseurl }}/" aria-label="Parham Rezaei home">
+        <img src="{{ site.baseurl }}/tn/images/caticon.png" alt="">
+      </a>
+      <div class="identity-copy">
+        <p class="rail-kicker">Parham Rezaei</p>
+        <p>Generative models, representation learning, sampling, and self-supervised learning.</p>
+      </div>
+      <nav class="rail-nav" aria-label="Primary navigation">
+        <a href="#work"><span>01</span>Publications</a>
+        <a href="#experience"><span>02</span>Research</a>
+        <a href="#more"><span>03</span>Miscellaneous</a>
+      </nav>
+      <div class="rail-links" aria-label="Contact links">
+        <a href="mailto:parhamix@gmail.com">Email</a>
+        <a href="https://github.com/rezaei-parham">GitHub</a>
+        <a href="https://scholar.google.ca/citations?hl=en&pli=1&user=1xWK-VAAAAAJ">Scholar</a>
+        <a href="https://www.linkedin.com/in/parham-rezaei">LinkedIn</a>
+      </div>
+    </aside>
+    <main class="atlas-shell">
+      <section class="atlas-opening" aria-labelledby="intro-title">
+        <div class="opening-copy">
+          <!-- <p class="atlas-kicker">Generative models</p> -->
+          <h1 id="intro-title">Parham Rezaei</h1>
+          <!-- <p class="opening-lede">I study how probability mass moves through learned systems.</p> -->
+          <p class="opening-summary">
+            I am a final-year undergraduate in Computer Engineering at Sharif University of Technology, working on self-supervised learning for world models.
           </p>
-          <p>
-            My work focuses on deep generative models from a statistical perspective, with particular interest in sampling methods, synthetic data selection, and the theory of flow models.
-          </p>
-          <div class="link-row" aria-label="Contact links">
-            <a class="chip-link" href="mailto:parhamix@gmail.com">Email</a>
-            <a class="chip-link" href="https://github.com/rezaei-parham">GitHub</a>
-            <a class="chip-link" href="https://scholar.google.ca/citations?hl=en&pli=1&user=1xWK-VAAAAAJ">Google Scholar</a>
-            <a class="chip-link" href="https://www.linkedin.com/in/parham-rezaei">LinkedIn</a>
-          </div>
         </div>
-        <div class="hero-visual">
-          <div class="portrait-frame">
-            <img src="{{ site.baseurl }}/images/profile.png" alt="Portrait of Parham Rezaei" class="hero-portrait">
+        <div class="field-stage" aria-hidden="true">
+          <div class="field-frame">
+            <span class="field-contour field-contour--one"></span>
+            <span class="field-contour field-contour--two"></span>
+            <span class="field-contour field-contour--three"></span>
+            <span class="field-stream field-stream--one"></span>
+            <span class="field-stream field-stream--two"></span>
+            <span class="field-stream field-stream--three"></span>
+            <span class="field-orbit field-orbit--sampling">
+              <span class="field-node"></span>
+              <span class="field-label">representation learning</span>
+            </span>
+            <span class="field-orbit field-orbit--selection">
+              <span class="field-node"></span>
+              <span class="field-label">planning</span>
+            </span>
+            <span class="field-orbit field-orbit--theory">
+              <span class="field-node"></span>
+              <span class="field-label">flow models</span>
+            </span>
+            <img src="{{ site.baseurl }}/images/profile.png" alt="" class="field-portrait">
           </div>
         </div>
       </section>
 
-      <section class="content-section">
-        <div class="section-heading">
+      <section class="atlas-section research-atlas" id="work" aria-labelledby="research-title">
+        <header class="atlas-heading">
+          <span class="section-index">01</span>
           <div>
-            <h2>Publications</h2>
+            <p class="atlas-kicker">Publications</p>
+            <!-- <h2 id="research-title">My published projects</h2> -->
           </div>
-         </div>
+        </header>
         <div class="publication-list">
           {% for post in site.posts %}
           {% if post.categories contains 'research' %}
@@ -127,18 +162,20 @@
         </div>
       </section>
 
-      <section class="content-section">
-        <div class="section-heading">
+      <section class="atlas-section path-section" id="experience" aria-labelledby="experience-title">
+        <header class="atlas-heading">
+          <span class="section-index">02</span>
           <div>
-            <h2>Research Experiences</h2>
+            <p class="atlas-kicker">Research Experience</p>
+            <!-- <h2 id="experience-title">Research Internships</h2> -->
           </div>
-         </div>
+        </header>
         <div class="experience-list">
           <article class="experience-card">
             <div class="experience-copy">
               <p class="experience-period">Jun. 2025 to Oct. 2025</p>
               <h3>EPFL</h3>
-              <p>Scaling search in auto-regressive image generative models.</p>
+              <p>Scaling search in autoregressive image generative models.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?user=RKjEFukAAAAJ&hl=en">Amir Zamir</a> (VILAB)</p>
             </div>
             <img src="{{ site.baseurl }}/images/experiences/epfl.png" alt="EPFL logo" class="experience-logo">
@@ -158,7 +195,7 @@
             <div class="experience-copy">
               <p class="experience-period">Jul. 2024 to Oct. 2024</p>
               <h3>CUHK</h3>
-              <p>Optimizing mixture of generative models using mixture-UCB algorithms.</p>
+              <p>Optimizing mixtures of generative models using mixture-UCB algorithms.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?user=GYPCqcYAAAAJ&hl=en">Farzan Farnia</a></p>
             </div>
             <img src="{{ site.baseurl }}/images/experiences/cuhk.png" alt="CUHK logo" class="experience-logo">
@@ -168,7 +205,7 @@
             <div class="experience-copy">
               <p class="experience-period">Dec. 2023 to Jul. 2024</p>
               <h3>Sharif ML Lab</h3>
-              <p>(Not contract-based) Compositional generation and spatial accuracy in text-to-image models.</p>
+              <p>Independent research on compositional generation and spatial accuracy in text-to-image models.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?hl=en&user=S1U0KlgAAAAJ">Mahdieh Soleymani</a> and Prof. <a href="https://scholar.google.com/citations?hl=en&user=pRyJ6FkAAAAJ">Mohammad Hossein Rohban</a></p>
             </div>
             <img src="{{ site.baseurl }}/images/experiences/sharif.png" alt="Sharif University logo" class="experience-logo experience-logo--small">
@@ -178,7 +215,7 @@
             <div class="experience-copy">
               <p class="experience-period">Jul. 2023 to Oct. 2023</p>
               <h3>L3S Research Center</h3>
-              <p>Improving rationales behind CLIP.</p>
+              <p>Improving CLIP rationale generation.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?user=LC62bdYAAAAJ&hl=en">Wolfgang Nejdl</a></p>
             </div>
             <img src="{{ site.baseurl }}/images/experiences/l3s.png" alt="L3S Research Center logo" class="experience-logo experience-logo--small">
@@ -186,13 +223,20 @@
         </div>
       </section>
 
-      <section class="content-section two-column-section">
-        <div class="info-card">
-          <div class="section-heading section-heading--compact">
-            <div>
-              <h2>Teaching and non-paid TA experiences.</h2>
-            </div>
+      <section class="atlas-section ledger-section" id="more" aria-labelledby="index-title">
+        <header class="atlas-heading">
+          <span class="section-index">03</span>
+          <div>
+            <p class="atlas-kicker">Miscellaneous</p>
+            <!-- <h2 id="index-title">Teaching and selected builds</h2> -->
           </div>
+        </header>
+        <div class="ledger-grid">
+          <div class="info-card">
+            <!-- <div class="ledger-heading">
+              <p class="atlas-kicker">Academic service</p>
+              <h3>Teaching</h3>
+            </div> -->
           <div class="list-group">
             <div class="list-block">
               <h3>TA</h3>
@@ -212,19 +256,24 @@
             <div class="list-block">
               <h3>Mathematics Olympiad Instructor</h3>
               <ul class="detail-list">
-                <li>Allameh Tabatabei High School, Sep. 2022 to Jul. 2023, Algebra</li>
+                <li>Allameh Tabatabaei High School, Sep. 2022 to Jul. 2023, Algebra</li>
                 <li>Allameh Helli High School, Sep. 2021 to Jul. 2022, Combinatorics and Geometry</li>
               </ul>
             </div>
           </div>
-        </div>
-
-        <div class="info-card">
-          <div class="section-heading section-heading--compact">
-            <div>
-              <h2>Other Projects</h2>
-            </div>
           </div>
+
+          <div class="list-group">
+            <div class="list-block">
+              <h3>Conference Reviewing</h3>
+              <ul class="detail-list">
+                <li>ICLR 2026, NeurIPS 2026</li>
+              </ul>
+            </div>
+            <!-- <div class="ledger-heading"> -->
+              <!-- <p class="atlas-kicker">Selected builds</p> -->
+              <h3>Other Projects</h3>
+            <!-- </div> -->
           <div class="project-list">
             {% for post in site.posts %}
             {% unless post.categories contains 'research' or post.categories contains 'Intel' %}
@@ -275,24 +324,24 @@
             {% endunless %}
             {% endfor %}
           </div>
+          </div>
         </div>
       </section>
 
-      <section class="content-section">
-        <div class="info-card info-card--wide">
-          <div class="section-heading section-heading--compact">
-            <div>
-              <h2>Miscellaneous</h2>
-            </div>
-          </div>
+      <section class="atlas-section note-strip">
+        <div class="note-index">
+          <p class="atlas-kicker"></p>
+          <h2>Hobbies</h2>
+        </div>
+        <div class="note-copy">
           <p class="section-note section-note--tight">
-            I like reading, lately mostly Kafka, playing tennis when tennis elbow allows it, and hiking.
+            I am currently reading Camus and occasionally playing tennis.
           </p>
         </div>
       </section>
 
       <footer class="site-footer">
-        <p>Source code originally adapted from <a href="https://jonbarron.info">Jon Barron's website</a>. Design by me.</p>
+        <p>Source code originally adapted from <a href="https://jonbarron.info">Jon Barron's website</a>. Site design by Parham Rezaei.</p>
       </footer>
     </main>
     {% else %}

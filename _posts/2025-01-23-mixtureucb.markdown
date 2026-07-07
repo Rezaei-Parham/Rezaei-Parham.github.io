@@ -11,4 +11,4 @@ arxiv: https://arxiv.org/abs/2412.17622
 code: https://github.com/rezaei-parham/mixture-ucb
 website: https://rezaei-parham.github.io/Mixture-UCB/
 ---
-We proposed an online algorithm for finding the optimal mixture of generative models.
+We proposed an online algorithm for selecting diverse mixtures of generative models.

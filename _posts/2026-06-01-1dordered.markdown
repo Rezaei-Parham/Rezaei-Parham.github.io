@@ -10,4 +10,4 @@ venue: "ICML"
 arxiv: https://arxiv.org/abs/2604.15453
 website: https://soto.epfl.ch/
 ---
-Through controlled experiments, we find that AR models trained on coarse-to-fine ordered tokens exhibit improved test-time scaling behavior compared to grid-based counterparts.
+Through controlled experiments, we found that AR models trained on coarse-to-fine ordered tokens exhibit improved test-time scaling behavior compared with grid-based counterparts.
