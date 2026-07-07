@@ -1,0 +1,18 @@
+{% assign thumb_480 = include.post.image | replace: '/images/', '/images/optimized/' | replace: '.png', '-480.webp' | replace: '.jpg', '-480.webp' | replace: '.jpeg', '-480.webp' %}
+{% assign thumb_720 = include.post.image | replace: '/images/', '/images/optimized/' | replace: '.png', '-720.webp' | replace: '.jpg', '-720.webp' | replace: '.jpeg', '-720.webp' %}
+{% assign thumb_sizes = include.sizes | default: '92vw' %}
+<a class="{{ include.class_name }}" href="{{ include.href }}">
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ site.baseurl }}/tn{{ thumb_480 }} 480w, {{ site.baseurl }}/tn{{ thumb_720 }} 720w"
+      sizes="{{ thumb_sizes }}">
+    <img
+      src="{{ site.baseurl }}/tn{{ include.post.image }}"
+      alt="Preview image for {{ include.post.title | escape }}"
+      width="720"
+      height="450"
+      loading="lazy"
+      decoding="async">
+  </picture>
+</a>

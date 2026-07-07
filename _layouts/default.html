@@ -32,8 +32,11 @@
   <meta name="theme-color" content="#f3f6f4">
   <meta name="description" content="{{ page_description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="icon" type="image/png" href="{{ site.baseurl }}/tn/images/caticon.png">
-  <link rel="apple-touch-icon" href="{{ site.baseurl }}/tn/images/caticon.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="{{ site.baseurl }}/tn/images/caticon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/tn/images/caticon-180.png">
+  {% if is_homepage %}
+  <link rel="preload" as="image" href="{{ site.baseurl }}/images/profile-320.webp" imagesrcset="{{ site.baseurl }}/images/profile-320.webp 320w, {{ site.baseurl }}/images/profile-640.webp 640w" imagesizes="(min-width: 900px) 200px, 34vw" fetchpriority="high">
+  {% endif %}
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:title" content="{{ site_title }}">
   <meta property="og:description" content="{{ page_description }}">
@@ -53,7 +56,16 @@
     {% if is_homepage %}
     <aside class="identity-rail" aria-label="Identity and navigation">
       <a class="identity-mark" href="{{ site.baseurl }}/" aria-label="Parham Rezaei home">
-        <img src="{{ site.baseurl }}/tn/images/caticon.png" alt="">
+        <img
+          src="{{ site.baseurl }}/tn/images/caticon-96.webp"
+          srcset="{{ site.baseurl }}/tn/images/caticon-96.webp 96w, {{ site.baseurl }}/tn/images/caticon-160.webp 160w"
+          sizes="43px"
+          width="96"
+          height="96"
+          alt=""
+          loading="eager"
+          decoding="async"
+          fetchpriority="high">
       </a>
       <div class="identity-copy">
         <p class="rail-kicker">Parham Rezaei</p>
@@ -101,7 +113,17 @@
               <span class="field-node"></span>
               <span class="field-label">flow models</span>
             </span>
-            <img src="{{ site.baseurl }}/images/profile.png" alt="" class="field-portrait">
+            <img
+              src="{{ site.baseurl }}/images/profile.png"
+              srcset="{{ site.baseurl }}/images/profile-320.webp 320w, {{ site.baseurl }}/images/profile-640.webp 640w"
+              sizes="(min-width: 900px) 200px, 34vw"
+              alt=""
+              class="field-portrait"
+              width="320"
+              height="313"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high">
           </div>
         </div>
       </section>
@@ -119,9 +141,7 @@
           {% if post.categories contains 'research' %}
           {% assign primary_link = post.website | default: post.url %}
           <article class="publication-card">
-            <a class="publication-thumb" href="{{ primary_link }}">
-              <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="Preview image for {{ post.title }}">
-            </a>
+            {% include post-thumb.html post=post href=primary_link class_name="publication-thumb" sizes="(min-width: 1180px) 300px, (min-width: 760px) 42vw, 92vw" %}
             <div class="publication-body">
               <div class="meta-row">
                 <span class="year-pill">{{ post.date | date: "%Y" }}</span>
@@ -178,7 +198,7 @@
               <p>Scaling search in autoregressive image generative models.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?user=RKjEFukAAAAJ&hl=en">Amir Zamir</a> (VILAB)</p>
             </div>
-            <img src="{{ site.baseurl }}/images/experiences/epfl.png" alt="EPFL logo" class="experience-logo">
+            <img src="{{ site.baseurl }}/images/experiences/optimized/epfl-160.webp" alt="EPFL logo" class="experience-logo" width="160" height="90" loading="lazy" decoding="async">
           </article>
 
           <article class="experience-card">
@@ -188,7 +208,7 @@
               <p>Theoretical foundations of generative data augmentation.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.it/citations?user=BHdSb5AAAAAJ&hl=it">Marco Mondelli</a> and Prof. <a href="https://scholar.google.it/citations?hl=it&user=wQanfTIAAAAJ">Francesco Locatello</a></p>
             </div>
-            <img src="{{ site.baseurl }}/images/experiences/ista.svg.png" alt="ISTA logo" class="experience-logo">
+            <img src="{{ site.baseurl }}/images/experiences/optimized/ista-160.webp" alt="ISTA logo" class="experience-logo" width="160" height="56" loading="lazy" decoding="async">
           </article>
 
           <article class="experience-card">
@@ -198,7 +218,7 @@
               <p>Optimizing mixtures of generative models using mixture-UCB algorithms.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?user=GYPCqcYAAAAJ&hl=en">Farzan Farnia</a></p>
             </div>
-            <img src="{{ site.baseurl }}/images/experiences/cuhk.png" alt="CUHK logo" class="experience-logo">
+            <img src="{{ site.baseurl }}/images/experiences/optimized/cuhk-160.webp" alt="CUHK logo" class="experience-logo" width="160" height="90" loading="lazy" decoding="async">
           </article>
 
           <article class="experience-card">
@@ -208,7 +228,7 @@
               <p>Independent research on compositional generation and spatial accuracy in text-to-image models.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?hl=en&user=S1U0KlgAAAAJ">Mahdieh Soleymani</a> and Prof. <a href="https://scholar.google.com/citations?hl=en&user=pRyJ6FkAAAAJ">Mohammad Hossein Rohban</a></p>
             </div>
-            <img src="{{ site.baseurl }}/images/experiences/sharif.png" alt="Sharif University logo" class="experience-logo experience-logo--small">
+            <img src="{{ site.baseurl }}/images/experiences/optimized/sharif-160.webp" alt="Sharif University logo" class="experience-logo experience-logo--small" width="160" height="151" loading="lazy" decoding="async">
           </article>
 
           <article class="experience-card">
@@ -218,7 +238,7 @@
               <p>Improving CLIP rationale generation.</p>
               <p>Advisor: Prof. <a href="https://scholar.google.com/citations?user=LC62bdYAAAAJ&hl=en">Wolfgang Nejdl</a></p>
             </div>
-            <img src="{{ site.baseurl }}/images/experiences/l3s.png" alt="L3S Research Center logo" class="experience-logo experience-logo--small">
+            <img src="{{ site.baseurl }}/images/experiences/optimized/l3s-160.webp" alt="L3S Research Center logo" class="experience-logo experience-logo--small" width="160" height="160" loading="lazy" decoding="async">
           </article>
         </div>
       </section>
@@ -279,9 +299,7 @@
             {% unless post.categories contains 'research' or post.categories contains 'Intel' %}
             {% assign project_link = post.website | default: post.url %}
             <article class="project-card">
-              <a class="project-thumb" href="{{ project_link }}">
-                <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="Preview image for {{ post.title }}">
-              </a>
+              {% include post-thumb.html post=post href=project_link class_name="project-thumb" sizes="86px" %}
               <div class="project-body">
                 <p class="project-meta">{{ post.categories }}{% if post.course %} · {{ post.course }}{% endif %}</p>
                 <h3><a href="{{ project_link }}">{{ post.title }}</a></h3>

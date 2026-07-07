@@ -524,6 +524,7 @@ strong {
   position: absolute;
   top: 0;
   left: var(--label-shift-x);
+  box-sizing: border-box;
   max-width: 10ch;
   padding: 4px 6px;
   border: 1px solid rgba(18, 20, 23, 0.08);
@@ -540,10 +541,15 @@ strong {
   transform: translateY(var(--label-shift-y));
 }
 
+.field-orbit--sampling .field-label {
+  max-width: 15ch;
+}
+
 .field-portrait {
   top: 48%;
   left: 50%;
   width: 30%;
+  height: auto;
   border: 1px solid rgba(18, 20, 23, 0.16);
   border-radius: 50%;
   filter: grayscale(0.18) contrast(1.06) saturate(0.95);
@@ -629,6 +635,13 @@ strong {
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.54);
+}
+
+.publication-thumb picture,
+.project-thumb picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .publication-thumb {
