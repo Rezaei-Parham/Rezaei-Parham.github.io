@@ -29,8 +29,23 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="author" content="{{ site.name }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f3f6f4">
   <meta name="description" content="{{ page_description }}">
+  <script>
+    (function () {
+      var storageKey = "parham-site-theme";
+      var theme = "light";
+      try {
+        var storedTheme = window.localStorage.getItem(storageKey);
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        theme = storedTheme || (prefersDark ? "dark" : "light");
+      } catch (error) {
+        theme = "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="icon" type="image/png" sizes="64x64" href="{{ site.baseurl }}/tn/images/caticon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/tn/images/caticon-180.png">
@@ -67,6 +82,15 @@
           decoding="async"
           fetchpriority="high">
       </a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 5.4a6.6 6.6 0 1 1 0 13.2 6.6 6.6 0 0 1 0-13.2Zm0 2.2a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8Z"></path>
+          <path d="M12 1.8c.42 0 .76.34.76.76v1.25a.76.76 0 0 1-1.52 0V2.56c0-.42.34-.76.76-.76Zm0 17.63c.42 0 .76.34.76.76v1.25a.76.76 0 0 1-1.52 0v-1.25c0-.42.34-.76.76-.76ZM3.83 3.83c.3-.3.78-.3 1.08 0l.88.88a.76.76 0 1 1-1.08 1.08l-.88-.88a.76.76 0 0 1 0-1.08Zm14.38 14.38c.3-.3.78-.3 1.08 0l.88.88a.76.76 0 1 1-1.08 1.08l-.88-.88a.76.76 0 0 1 0-1.08ZM1.8 12c0-.42.34-.76.76-.76h1.25a.76.76 0 0 1 0 1.52H2.56A.76.76 0 0 1 1.8 12Zm17.63 0c0-.42.34-.76.76-.76h1.25a.76.76 0 0 1 0 1.52h-1.25a.76.76 0 0 1-.76-.76ZM5.79 18.21c.3.3.3.78 0 1.08l-.88.88a.76.76 0 1 1-1.08-1.08l.88-.88c.3-.3.78-.3 1.08 0Zm14.38-14.38c.3.3.3.78 0 1.08l-.88.88a.76.76 0 1 1-1.08-1.08l.88-.88c.3-.3.78-.3 1.08 0Z"></path>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.7 14.32a.86.86 0 0 1 .16.9 9.4 9.4 0 1 1-12.08-12.08.86.86 0 0 1 1.07 1.13 7.65 7.65 0 0 0 9.88 9.88.86.86 0 0 1 .97.17ZM12 4.3a7.69 7.69 0 1 0 7.7 7.7 9.38 9.38 0 0 1-7.7-7.7Z"></path>
+        </svg>
+      </button>
       <div class="identity-copy">
         <p class="rail-kicker">Parham Rezaei</p>
         <p>Generative models, representation learning, sampling, and self-supervised learning.</p>
@@ -356,5 +380,6 @@
     {% endif %}
   </div>
   <script src="{{ site.baseurl }}/assets/js/network-bg.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/theme-toggle.js"></script>
 </body>
 </html>
