@@ -63,7 +63,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
+  {% assign asset_version = site.github.build_revision %}
+  {% unless asset_version %}
+  {% assign asset_version = site.time | date: "%s" %}
+  {% endunless %}
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css?v={{ asset_version }}">
+  <style>
+    .publication-thumb.post-thumb--transparent,
+    .project-thumb.post-thumb--transparent {
+      border-color: rgba(18, 20, 23, 0.11);
+      background:
+        linear-gradient(90deg, rgba(18, 20, 23, 0.028) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(18, 20, 23, 0.024) 1px, transparent 1px),
+        #f3efe5;
+      background-size: 24px 24px, 24px 24px, 100% 100%;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.52);
+    }
+
+    html[data-theme="dark"] .publication-thumb.post-thumb--transparent,
+    html[data-theme="dark"] .project-thumb.post-thumb--transparent {
+      border-color: rgba(244, 240, 232, 0.22);
+      background:
+        linear-gradient(90deg, rgba(18, 20, 23, 0.028) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(18, 20, 23, 0.024) 1px, transparent 1px),
+        #f3efe5;
+      background-size: 24px 24px, 24px 24px, 100% 100%;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 12px 28px rgba(0, 0, 0, 0.24);
+    }
+
+    .publication-thumb.post-thumb--transparent img,
+    .project-thumb.post-thumb--transparent img {
+      filter: none;
+    }
+  </style>
 </head>
 <body class="{% if is_homepage %}home-template{% else %}page-template{% endif %}">
   <canvas class="network-canvas" id="network-canvas" aria-hidden="true"></canvas>
