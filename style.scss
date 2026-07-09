@@ -33,6 +33,9 @@
   --surface-soft: rgba(255, 255, 255, 0.54);
   --surface-hover-shadow: 0 16px 34px rgba(18, 20, 23, 0.08);
   --thumb-border: rgba(18, 20, 23, 0.1);
+  --thumb-art-bg: #f3efe5;
+  --thumb-art-border: rgba(18, 20, 23, 0.11);
+  --thumb-art-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.52);
   --field-grid-x: rgba(18, 20, 23, 0.052);
   --field-grid-y: rgba(18, 20, 23, 0.044);
   --field-surface-a: rgba(255, 253, 250, 0.93);
@@ -83,6 +86,9 @@ html[data-theme="dark"] {
   --surface-soft: rgba(244, 240, 232, 0.055);
   --surface-hover-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
   --thumb-border: rgba(244, 240, 232, 0.11);
+  --thumb-art-bg: #f3efe5;
+  --thumb-art-border: rgba(244, 240, 232, 0.22);
+  --thumb-art-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 12px 28px rgba(0, 0, 0, 0.24);
   --field-grid-x: rgba(244, 240, 232, 0.052);
   --field-grid-y: rgba(244, 240, 232, 0.04);
   --field-surface-a: rgba(20, 26, 28, 0.94);
@@ -772,6 +778,17 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   background: var(--surface-soft);
 }
 
+.publication-thumb.post-thumb--transparent,
+.project-thumb.post-thumb--transparent {
+  border-color: var(--thumb-art-border);
+  background:
+    linear-gradient(90deg, rgba(18, 20, 23, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(18, 20, 23, 0.024) 1px, transparent 1px),
+    var(--thumb-art-bg);
+  background-size: 24px 24px, 24px 24px, 100% 100%;
+  box-shadow: var(--thumb-art-shadow);
+}
+
 .publication-thumb picture,
 .project-thumb picture {
   display: block;
@@ -790,6 +807,11 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   object-fit: contain;
   padding: 8px;
   filter: saturate(0.95) contrast(1.03);
+}
+
+.publication-thumb.post-thumb--transparent img,
+.project-thumb.post-thumb--transparent img {
+  filter: none;
 }
 
 .publication-body,

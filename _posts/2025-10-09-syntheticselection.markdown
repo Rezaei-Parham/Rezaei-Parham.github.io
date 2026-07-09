@@ -2,7 +2,7 @@
 layout: post
 title:  "High-dimensional Analysis of Synthetic Data Selection"
 date:   2025-10-09 22:21:59 +00:00
-image: /images/syntheticselection.png
+image: /images/project-pics/transparent/synthetic-selection.png
 categories: research
 author: "Parham Rezaei"
 authors: "<strong>Parham Rezaei</strong>, Filip Kovacevic, Francesco Locatello, Marco Mondelli"

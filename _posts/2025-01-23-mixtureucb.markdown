@@ -2,7 +2,7 @@
 layout: post
 title:  "Be More Diverse than the Most Diverse: Online Selection of Diverse Mixtures of Generative Models"
 date:   2025-01-23 22:21:59 +00:00
-image: /images/mixtureelephant.png
+image: /images/project-pics/transparent/mixture-ucb.png
 categories: research
 author: "Parham Rezaei"
 authors: "<strong>Parham Rezaei</strong>, Farzan Farnia, Cheuk Ting Li"

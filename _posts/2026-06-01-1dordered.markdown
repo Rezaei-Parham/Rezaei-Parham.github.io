@@ -2,7 +2,7 @@
 layout: post
 title:  "(1D) Ordered Tokens Enable Efficient Test-Time Search"
 date:   2025-10-09 22:21:59 +00:00
-image: /images/houses.png
+image: /images/project-pics/transparent/1d-ordered-tokens.png
 categories: research
 author: "Parham Rezaei"
 authors: "Zhitong Gao, <strong>Parham Rezaei</strong>, Ali Cy, Mingqiao Ye, Nataša Jovanović, Jesse Allardice, Afshin Dehghan, Amir Zamir, Roman Bachmann, Oğuzhan Fatih Kar"

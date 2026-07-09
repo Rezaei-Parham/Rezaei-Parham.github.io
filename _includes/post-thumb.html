@@ -1,7 +1,11 @@
 {% assign thumb_480 = include.post.image | replace: '/images/', '/images/optimized/' | replace: '.png', '-480.webp' | replace: '.jpg', '-480.webp' | replace: '.jpeg', '-480.webp' %}
 {% assign thumb_720 = include.post.image | replace: '/images/', '/images/optimized/' | replace: '.png', '-720.webp' | replace: '.jpg', '-720.webp' | replace: '.jpeg', '-720.webp' %}
 {% assign thumb_sizes = include.sizes | default: '92vw' %}
-<a class="{{ include.class_name }}" href="{{ include.href }}">
+{% assign is_transparent_project = false %}
+{% if include.post.image contains '/project-pics/transparent/' %}
+{% assign is_transparent_project = true %}
+{% endif %}
+<a class="{{ include.class_name }}{% if is_transparent_project %} post-thumb--transparent{% endif %}" href="{{ include.href }}">
   <picture>
     <source
       type="image/webp"

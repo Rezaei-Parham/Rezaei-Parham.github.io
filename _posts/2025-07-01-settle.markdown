@@ -2,7 +2,7 @@
 layout: post
 title:  "Why Settle for Mid: A Probabilistic Viewpoint to Spatial Relationship Alignment in Text-to-image Models"
 date:   2025-07-01 22:21:59 +00:00
-image: /images/pandaoverdragon.png
+image: /images/project-pics/transparent/why-settle-for-mid.png
 categories: research
 author: "Parham Rezaei"
 authors: "<strong>Parham Rezaei</strong>, Arash Mari Oriyad, M.S. Baghshah, M.H. Rohban"
