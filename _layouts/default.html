@@ -18,13 +18,22 @@
   {% assign site_title = site.name %}
   {% if is_homepage %}
   {% assign page_description = "Parham Rezaei's homepage. Research in generative models, synthetic data, sampling methods, and flow models." %}
+  {% assign document_title = site_title %}
+  {% elsif page.description %}
+  {% assign page_description = page.description %}
+  {% assign document_title = page.title | append: " | " | append: site_title %}
   {% elsif page.excerpt %}
   {% assign page_description = page.excerpt | markdownify | strip_html | strip_newlines | normalize_whitespace %}
+  {% assign document_title = page.title | append: " | " | append: site_title %}
   {% else %}
   {% assign page_description = "Parham Rezaei's homepage. Research in generative models, synthetic data, sampling methods, and flow models." %}
+  {% assign document_title = page.title | append: " | " | append: site_title %}
   {% endif %}
 
-  <title>{{ site_title }}</title>
+  {% capture generated_canonical %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+  {% assign canonical_url = page.canonical_url | default: generated_canonical %}
+
+  <title>{{ document_title }}</title>
 
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="author" content="{{ site.name }}">
@@ -46,19 +55,19 @@
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
   <link rel="icon" type="image/png" sizes="64x64" href="{{ site.baseurl }}/tn/images/caticon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/tn/images/caticon-180.png">
   {% if is_homepage %}
   <link rel="preload" as="image" href="{{ site.baseurl }}/images/profile.png" fetchpriority="high">
   {% endif %}
   <meta property="og:site_name" content="{{ site.name }}">
-  <meta property="og:title" content="{{ site_title }}">
+  <meta property="og:title" content="{{ document_title }}">
   <meta property="og:description" content="{{ page_description }}">
   <meta property="og:type" content="{% if is_homepage %}website{% else %}article{% endif %}">
-  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:url" content="{{ canonical_url }}">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ site_title }}">
+  <meta name="twitter:title" content="{{ document_title }}">
   <meta name="twitter:description" content="{{ page_description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
