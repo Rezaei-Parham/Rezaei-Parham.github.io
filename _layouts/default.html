@@ -59,7 +59,7 @@
   <link rel="icon" type="image/png" sizes="64x64" href="{{ site.baseurl }}/tn/images/caticon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/tn/images/caticon-180.png">
   {% if is_homepage %}
-  <link rel="preload" as="image" href="{{ site.baseurl }}/images/profile.png" fetchpriority="high">
+  <link rel="preload" as="image" href="{{ site.baseurl }}/images/profile-640.webp" fetchpriority="high">
   {% endif %}
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:title" content="{{ document_title }}">
@@ -81,23 +81,15 @@
     .publication-thumb.post-thumb--transparent,
     .project-thumb.post-thumb--transparent {
       border-color: rgba(18, 20, 23, 0.11);
-      background:
-        linear-gradient(90deg, rgba(18, 20, 23, 0.028) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(18, 20, 23, 0.024) 1px, transparent 1px),
-        #f3efe5;
-      background-size: 24px 24px, 24px 24px, 100% 100%;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.52);
+      background: #f1eee5;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
     }
 
     html[data-theme="dark"] .publication-thumb.post-thumb--transparent,
     html[data-theme="dark"] .project-thumb.post-thumb--transparent {
       border-color: rgba(244, 240, 232, 0.22);
-      background:
-        linear-gradient(90deg, rgba(18, 20, 23, 0.028) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(18, 20, 23, 0.024) 1px, transparent 1px),
-        #f3efe5;
-      background-size: 24px 24px, 24px 24px, 100% 100%;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 12px 28px rgba(0, 0, 0, 0.24);
+      background: #f1eee5;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.24);
     }
 
     .publication-thumb.post-thumb--transparent img,
@@ -107,7 +99,6 @@
   </style>
 </head>
 <body class="{% if is_homepage %}home-template{% else %}page-template{% endif %}">
-  <canvas class="network-canvas" id="network-canvas" aria-hidden="true"></canvas>
   <div class="site-chrome">
     {% if is_homepage %}
     <aside class="identity-rail" aria-label="Identity and navigation">
@@ -134,12 +125,11 @@
       </button>
       <div class="identity-copy">
         <p class="rail-kicker">Parham Rezaei</p>
-        <p>Generative models, representation learning, sampling, and self-supervised learning.</p>
       </div>
       <nav class="rail-nav" aria-label="Primary navigation">
-        <a href="#work"><span>01</span>Publications</a>
-        <a href="#experience"><span>02</span>Research</a>
-        <a href="#more"><span>03</span>Miscellaneous</a>
+        <a href="#work">Publications</a>
+        <a href="#experience">Research</a>
+        <a href="#more">Miscellaneous</a>
       </nav>
       <div class="rail-links" aria-label="Contact links">
         <a href="mailto:parhamix@gmail.com">Email</a>
@@ -151,45 +141,41 @@
     <main class="atlas-shell">
       <section class="atlas-opening" aria-labelledby="intro-title">
         <div class="opening-copy">
-          <!-- <p class="atlas-kicker">Generative models</p> -->
           <h1 id="intro-title">Parham Rezaei</h1>
-          <!-- <p class="opening-lede">I study how probability mass moves through learned systems.</p> -->
           <p class="opening-summary">
-            I am a final-year undergraduate in Computer Engineering at Sharif University of Technology, working on self-supervised learning for world models.
+            I recently graduated with a degree in Computer Engineering from Sharif University of Technology. I am working on understanding representations for efficient planning via diffusion models, alongside some scattered ideas about how tool use could improve planning via AR models.
           </p>
-        </div>
-        <div class="field-stage" aria-hidden="true">
-          <div class="field-frame">
-            <span class="field-contour field-contour--one"></span>
-            <span class="field-contour field-contour--two"></span>
-            <span class="field-contour field-contour--three"></span>
-            <span class="field-stream field-stream--one"></span>
-            <span class="field-stream field-stream--two"></span>
-            <span class="field-stream field-stream--three"></span>
-            <span class="field-orbit field-orbit--sampling">
-              <span class="field-node"></span>
-              <span class="field-label">representation learning</span>
-            </span>
-            <span class="field-orbit field-orbit--selection">
-              <span class="field-node"></span>
-              <span class="field-label">planning</span>
-            </span>
-            <span class="field-orbit field-orbit--theory">
-              <span class="field-node"></span>
-              <span class="field-label">flow models</span>
-            </span>
-            <img src="{{ site.baseurl }}/images/profile.png" alt="" class="field-portrait">
+          <div class="opening-links" aria-label="Primary profile links">
+            <a href="mailto:parhamix@gmail.com">Get in touch</a>
+            <a href="https://scholar.google.ca/citations?hl=en&pli=1&user=1xWK-VAAAAAJ">Google Scholar</a>
           </div>
+        </div>
+        <div class="field-stage">
+          <button
+            class="pixel-portrait"
+            type="button"
+            data-pixel-portrait
+            data-image-src="{{ site.baseurl }}/images/profile-640.webp"
+            aria-label="Reveal more of the portrait"
+            title="Reveal more of the portrait">
+            <canvas class="pixel-portrait__canvas" width="640" height="640" aria-hidden="true"></canvas>
+            <img
+              class="pixel-portrait__fallback"
+              src="{{ site.baseurl }}/images/profile-640.webp"
+              srcset="{{ site.baseurl }}/images/profile-320.webp 320w, {{ site.baseurl }}/images/profile-640.webp 640w"
+              sizes="(max-width: 620px) 76vw, 430px"
+              width="640"
+              height="626"
+              alt="Portrait of Parham Rezaei"
+              decoding="async"
+              fetchpriority="high">
+          </button>
         </div>
       </section>
 
       <section class="atlas-section research-atlas" id="work" aria-labelledby="research-title">
         <header class="atlas-heading">
-          <span class="section-index">01</span>
-          <div>
-            <p class="atlas-kicker">Publications</p>
-            <!-- <h2 id="research-title">My published projects</h2> -->
-          </div>
+          <h2 class="atlas-kicker section-title" id="research-title">Publications</h2>
         </header>
         <div class="publication-list">
           {% for post in site.posts %}
@@ -239,11 +225,7 @@
 
       <section class="atlas-section path-section" id="experience" aria-labelledby="experience-title">
         <header class="atlas-heading">
-          <span class="section-index">02</span>
-          <div>
-            <p class="atlas-kicker">Research Experience</p>
-            <!-- <h2 id="experience-title">Research Internships</h2> -->
-          </div>
+          <h2 class="atlas-kicker section-title" id="experience-title">Research Experience</h2>
         </header>
         <div class="experience-list">
           <article class="experience-card">
@@ -300,11 +282,7 @@
 
       <section class="atlas-section ledger-section" id="more" aria-labelledby="index-title">
         <header class="atlas-heading">
-          <span class="section-index">03</span>
-          <div>
-            <p class="atlas-kicker">Miscellaneous</p>
-            <!-- <h2 id="index-title">Teaching and selected builds</h2> -->
-          </div>
+          <h2 class="atlas-kicker section-title" id="index-title">Miscellaneous</h2>
         </header>
         <div class="ledger-grid">
           <div class="info-card">
@@ -420,7 +398,7 @@
     </main>
     {% endif %}
   </div>
-  <script src="{{ site.baseurl }}/assets/js/network-bg.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/pixel-reveal.js"></script>
   <script src="{{ site.baseurl }}/assets/js/theme-toggle.js"></script>
 </body>
 </html>
