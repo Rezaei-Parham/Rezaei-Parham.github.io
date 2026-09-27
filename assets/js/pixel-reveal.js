@@ -24,6 +24,7 @@
   let revealedTiles = initialTiles;
   let targetTiles = initialTiles;
   let animationFrame = 0;
+  let initialized = false;
 
   function shuffleTiles() {
     for (let index = tileOrder.length - 1; index > 0; index -= 1) {
@@ -122,17 +123,24 @@
     }
   }
 
-  image.addEventListener("load", function () {
+  function initializePortrait() {
+    if (initialized || !image.naturalWidth || !image.naturalHeight) {
+      return;
+    }
+
+    initialized = true;
     shuffleTiles();
     drawSourceImage();
     drawTiles(initialTiles);
     portrait.classList.add("is-ready");
     portrait.addEventListener("click", revealMore);
-  }, { once: true });
+  }
+
+  image.addEventListener("load", initializePortrait, { once: true });
 
   image.src = sourceUrl;
 
-  if (image.complete) {
-    image.dispatchEvent(new Event("load"));
+  if (image.complete && image.naturalWidth && image.naturalHeight) {
+    initializePortrait();
   }
 })();
